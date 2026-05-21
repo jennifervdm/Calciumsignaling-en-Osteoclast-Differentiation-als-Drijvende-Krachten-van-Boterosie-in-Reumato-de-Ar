@@ -31,3 +31,28 @@ Uitleg competentie beheren:
 - voorbeeld: https://github.com/Thewoahh/J2P4-Wizarding-Spell-Metrics
 - file (md) met uitleg Data Stewardship
 - file met uitleg toepassing GitHub
+
+######
+######
+######
+######
+
+START CASUS
+#Inleiding
+-Aanleiding:
+-Achtergrondinformatie:
+-Doelstelling:
+-Bronnen (PDF)
+
+#Methode
+-Methode wat gedaan in R
+-Flowschema
+-Leerdoelen: scripts, data, etc. in aparte folder met verwijzing
+
+#Resultaten
+-Resultaten inclusief correcte verwijzing
+
+#Conclusie
+-Conclusie:
+-Aanbevelingen:
+-Context voor onderzoek: Dit onderzoek helpt bij het in kaart brengen van de KEGG-Pathways etc. voor het 
