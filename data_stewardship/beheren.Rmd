@@ -1,0 +1,25 @@
+-Waarom is dit een belangrijk onderdeel van onderzoek doen?
+Het zorgt dat data en scripts goed terug opgeslagen en terug te vinden zijn. 
+
+-Wat is een duidelijke mappenstructuur en waarom houd je dat aan?
+Een duidelijke mappenstructuur is essentieel voor in het werkveld. Hierdoor kunnen anderen je bestanden met belangrijke data terugvinden. Een duidelijke mappenstructuur scheid alle verschillende onderdelen in afzonderlijke mappen. Denk aan de gebruikte afbeeldingen onder assets, artikelen en geraadpleegte informatie onder bronnen, gemaakte data onder het mapje data, een mapje voor resultaten en een voor de gebruikte scripts.
+
+-Wat is een handige manier voor de naamgeving van bestanden en waarom?
+Het is handig om 
+
+-Wat houdt versiebeheer in en waarom doe je dit?
+Versiebeheer of VCS is een benaming vaak gebruikt in software ontwikkeling om duidelijk te maken om welke versie het gaat. Dit voorkomt dat een file overwritten wordt en informatie verloren gaat.
+
+-Hoe zorg je voor goede documentatie in scripts?
+In je scripts kan je notities toevoegen met "#". Hiermee kan extra informatie worden toegelicht. Overigens moet er rekening gehouden worden met de juiste benaming voor vectoren, matrices, tabellen, etc.
+
+-Wat voor platforms kan je gebruiken om scripts te delen?
+GitHub is een goed platform om scripts te delen wegens hun mappenstructuur en integratie van desktop en digitaal. Je kan de scripts delen of privé houden afhankelijk van het doel.
+
+-Welke tools gebruik je voor data-analyse, zoals bijvoorbeeld voor het veilig opslaan van data?
+
+
+-Hoe zou je omgaan met gevoelige of persoonlijke data?
+
+
+-Wat is het belang van open data en het publiceren van datasets?
