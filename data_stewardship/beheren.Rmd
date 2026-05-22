@@ -5,10 +5,10 @@ Het zorgt dat data en scripts goed terug opgeslagen en terug te vinden zijn.
 Een duidelijke mappenstructuur is essentieel voor in het werkveld. Hierdoor kunnen anderen je bestanden met belangrijke data terugvinden. Een duidelijke mappenstructuur scheid alle verschillende onderdelen in afzonderlijke mappen. Denk aan de gebruikte afbeeldingen onder assets, artikelen en geraadpleegte informatie onder bronnen, gemaakte data onder het mapje data, een mapje voor resultaten en een voor de gebruikte scripts.
 
 -Wat is een handige manier voor de naamgeving van bestanden en waarom?
-Het is handig om 
+Het is handig om naamgeving eenduidig en specifiek te maken, met voorkeur inclusief jaar/datum en auteur.
 
 -Wat houdt versiebeheer in en waarom doe je dit?
-Versiebeheer of VCS is een benaming vaak gebruikt in software ontwikkeling om duidelijk te maken om welke versie het gaat. Dit voorkomt dat een file overwritten wordt en informatie verloren gaat.
+Versiebeheer of VCS is een benaming vaak gebruikt in software ontwikkeling om duidelijk te maken om welke versie het gaat. Dit systeem voorkomt dat een bestand 'overwritten' wordt en informatie verloren gaat.
 
 -Hoe zorg je voor goede documentatie in scripts?
 In je scripts kan je notities toevoegen met "#". Hiermee kan extra informatie worden toegelicht. Overigens moet er rekening gehouden worden met de juiste benaming voor vectoren, matrices, tabellen, etc.
@@ -20,6 +20,7 @@ GitHub is een goed platform om scripts te delen wegens hun mappenstructuur en in
 
 
 -Hoe zou je omgaan met gevoelige of persoonlijke data?
-
+Dit wordt zorgvuldig bewaard en niet openbaar gesteld.
 
 -Wat is het belang van open data en het publiceren van datasets?
+Open data is toegankelijk tot breed publiek. Hierdoor kan het steeds weer gebruikt worden. Hiermee wordt nooit persoonlijke en gevoelige data bedoeld, dit blijft strict privé.
