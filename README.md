@@ -37,22 +37,28 @@ Uitleg competentie beheren:
 ######
 ######
 
+
+
+
+
+
 START CASUS
 #Inleiding
--Aanleiding:
+-Aanleiding: Reuma is een verzamelnaam voor een aantal ziektes die pijnlijke gewrichten veroorzaken voor patienten. Het variant reumatoïde artritis is een aandoening waar ruim ... mensen in aanraking mee komen, en is net wat minder voorkomend dan het ... variant (bron). Het is een progressieve ziekte die vaak ontstaat bij mensen rond de ... jaar (bron). Er is nog weinig bekend over de oorzaak van de ziekte, het medische veld kan alle informatie gebruiken om het probleem bij de kern aan te kunnen pakken (bron).
 -Achtergrondinformatie:
 -Doelstelling:
 -Bronnen (PDF)
 
 #Methode
--Methode wat gedaan in R
--Flowschema
+-Methode wat gedaan in R: Er is geanalyseerd hoe de 
+-Flowschema:
 -Leerdoelen: scripts, data, etc. in aparte folder met verwijzing
 
 #Resultaten
--Resultaten inclusief correcte verwijzing
+-Resultaten inclusief correcte verwijzing:
 
 #Conclusie
 -Conclusie:
 -Aanbevelingen:
--Context voor onderzoek: Dit onderzoek helpt bij het in kaart brengen van de KEGG-Pathways etc. voor het 
+-Context voor onderzoek: Dit onderzoek helpt bij het in kaart brengen van de KEGG-Pathways etc. voor het helpen achterhalen van de oorzaak van RA
+
