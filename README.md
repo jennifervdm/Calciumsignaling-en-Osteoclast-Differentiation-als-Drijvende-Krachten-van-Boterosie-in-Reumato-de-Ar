@@ -15,7 +15,7 @@ Onderzoek wat zich focust op de pagina
 
 ---
 
-## Introductie
+## Inleiding
 
 -
 
@@ -33,7 +33,7 @@ Onderzoek wat zich focust op de pagina
 
 -
 <p align =”center”>
-<img src = “assets/Volcanoplot_RA.png” alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen tegenover RA patienten. n=29407, p-waarde is meegenomen.”
+<img src = “assets/Volcanoplot_RA.png” alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen(n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen.”
 width = “600”/>
 </p>
 
