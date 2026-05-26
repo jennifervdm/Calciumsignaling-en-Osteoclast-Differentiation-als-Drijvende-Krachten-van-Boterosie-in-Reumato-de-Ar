@@ -1,7 +1,5 @@
 # Transcriptomics van reumatoïde artritis
 
-Onderzoek wat zich focust op de pagina
-
 ## 📁 Inhoud/structuur
 
 - `data/raw/` – Ruwe data afkomstig van 8 individuen, waarvan 4 RA hebben, en 4 gezond zijn.  
