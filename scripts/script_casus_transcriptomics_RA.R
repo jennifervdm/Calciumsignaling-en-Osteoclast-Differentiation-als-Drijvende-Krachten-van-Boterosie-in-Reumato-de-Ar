@@ -219,24 +219,50 @@ hoogste_fold_change_RA = resultaten_RA[order(resultaten_RA$log2FoldChange, decre
 laagste_fold_change_RA = resultaten_RA[order(resultaten_RA$log2FoldChange, decreasing = FALSE), ]
 laagste_p_waarde_RA = resultaten_RA[order(resultaten_RA$padj, decreasing = FALSE), ]
 # Bekijk de volgende resultaten
-head(hoogste_fold_change)
-head(laagste_fold_change)
-head(laagste_p_waarde)
+head(hoogste_fold_change_RA)
+head(laagste_fold_change_RA)
+head(laagste_p_waarde_RA)
 # Maak de Volcano plot
-EnhancedVolcano(resultaten_RA,
+VolcanoPlot_RA = EnhancedVolcano(resultaten_RA,
                 lab = rownames(resultaten_RA),
                 x = 'log2FoldChange',
                 y = 'padj')
+# Verander de limieten van data en ruimte tussen labels
+VolcanoPlot_RA + scale_x_continuous(
+  limits = c(-13, 13),
+  breaks = seq(-14, 14, by = 2))
 # Download de Volcano plot
-dev.copy(png, 'VolcanoplotWC.png', 
-         width = 8,
+dev.copy(png, 'Volcanoplot_RA.png', 
+         width = 10,
          height = 10,
          units = 'in',
          res = 500)
+         
+
 dev.off()
 
-scale_x_continuous, limit = c(-13, 13), breaks = seq(-14, 14, by = 2))
-#NODIG VOOR VOLCANO PLOT**********************************
+# Voer nu de pathway analyse uit
+# Hierbij worden de KEGG-pathways bekeken en vergeleken met de resultaten
+# Zo wordt duidelijk welke pathways betrokken zijn bij bepaalde genen
+# Op de website kegg.jp kunnen pathways gemapt worden met genen uit de Volcano plot
+# Website: https://www.kegg.jp/kegg-bin/show_organism?menu_type=pathway_maps&org=hsa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Voer nu de GO-analyse (gene ontology analyse) uit
 # Hierbij kijk je naar de functies van genen 
