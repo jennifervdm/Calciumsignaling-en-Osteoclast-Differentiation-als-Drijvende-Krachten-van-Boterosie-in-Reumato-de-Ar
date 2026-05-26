@@ -5,7 +5,7 @@
 - `data/processed` - Verwerkte datasets gegenereerd met scripts 
 - `scripts/` – Scripts waarin de data geanalyseerd wordt
 - `resultaten/` - Figuren zoals grafieken en tabellen
-- `bronnen/` - Gebruikte bronnen 
+- `bronnen/` - Gebruikte bronnen en AI gebruik
 - `README.md` - Het document om de tekst hier te genereren
 - `assets/` - Overige documenten voor de opmaak van deze pagina
 - `data_stewardship/` - Aantoning van de competentie Beheren niveau I 
@@ -41,5 +41,5 @@ width = “600”/>
 
 ## Bronnen
 
--
+Hier zijn alle gebruikte [bronnen](bronnen/Casus-RA_Bronnenlijst.pdf).
 
