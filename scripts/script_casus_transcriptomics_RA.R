@@ -237,9 +237,50 @@ dev.copy(png, 'Volcanoplot_RA.png',
          height = 10,
          units = 'in',
          res = 500)
-         
-
+# Sluit dev om de afbeelding in downloads te kunnen zien
 dev.off()
+
+
+# Nu een plot met interessante genen die niet te maken hebben met T-cellen
+Interessante_Genen = subset(
+  resultaten_RA)
+# Filter de genen die met T-cellen te maken hebben
+Tcel_Genen = c("CD3D", "CD3E", "CD4", "CD8A", "CD28", "CXCR1", "HLA-V", "RAB3IL1", "SRGN", "BCL2A1", "PTGFR", "ADAMDEC1")
+# Maak de nieuwe dataset
+Interessante_Genen = Interessante_Genen[
+  !(rownames(Interessante_Genen) %in% Tcel_Genen), ]
+# Maak de Volcano Plot met interessante genen
+VolcanoPlot_RA_Interessante_Genen = EnhancedVolcano(Interessante_Genen,
+                                 lab = rownames(Interessante_Genen),
+                                 x = 'log2FoldChange',
+                                 y = 'padj')
+
+VolcanoPlot_RA_Interessante_Genen + scale_x_continuous(
+  limits = c(-13, 13),
+  breaks = seq(-14, 14, by = 2))
+# Download de Volcano plot
+dev.copy(png, 'Volcanoplot_RA_Interessante_Genen.png', 
+         width = 10,
+         height = 10,
+         units = 'in',
+         res = 500)
+# Sluit dev om de afbeelding in downloads te kunnen zien
+dev.off()
+
+
+
+
+
+
+BiocManager::install("clusterProfiler")
+library(clusterProfiler)
+
+kegg = enrichKEGG(
+  gene = entrez_ids,
+  organism = "hsa"
+)
+
+
 
 # Voer nu de pathway analyse uit
 # Hierbij worden de KEGG-pathways bekeken en vergeleken met de resultaten
