@@ -305,10 +305,9 @@ kegg = enrichKEGG(
 
 
 
-# Voer nu de GO-analyse (gene ontology analyse) uit
+# Voer nu de GO-analyse (enriched gene ontology terms) uit
 # Hierbij kijk je naar de functies van genen 
-# Je hebt een aantal packages nodig
-#
+# Je hebt een aantal packages nodig (geen idee welke...)
 library(BiocManager)
 library(tidyverse)
 library(dplyr)
@@ -325,6 +324,41 @@ library(Rsamtools)
 library(DESeq2)
 library(pathview)
 
+
+
+
+BiocManager::install("DESeq2")
+browseVignettes("DESeq2")
+library(DESeq2)
+
+setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/Data_RA_raw/")
+getwd()
+
+
+
+install.packages("BiocManager", repos = "https://cloud.r-project.org")
+
+source("http://bioconductor.org/biocLite.R")
+biocLite("goseq")
+#package to pull out annotated information about our genome and genes  
+biocLite("geneLenDataBase")   				
+#package to load the GO terms specific to drosophilia
+biocLite("org.Dm.eg.db")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#Mogelijk nog handig?
 # Je hebt een vector met alle genen en differentieel tot expressie gebrachte genen
 # Hiervoor moet eerst je data gelezen worden
 gene.vector <- as.integer(assayed.genes %in% de.genes)
@@ -332,7 +366,18 @@ names(gene.vector) <- assayed.genes
 head(gene.vector)
 
 
-#
+
+
+
+
+
+
+
+
+
+
+
+# Geen idee of dit nog handig is.....
 supportedOrganisms() %>% filter(str_detect(Genome, "hg19"))
 
 
