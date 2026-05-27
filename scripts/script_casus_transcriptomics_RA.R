@@ -11,7 +11,7 @@ library(Rsubread)
 
 # Referentiegenoom downloaden, verplaats GCF file naar working directory
 # Refgen kan via NCBI of Ensembl gedownload worden 
-# Gebruik hetzelfde refgen voor de GTF gen-notaties 
+# Gebruik hetzelfde refgen voor de GTF gen-notaties
 
 # Indexeren (download in je wd locatie)
 # Dit is het verkleinen van de sequenties om groepen bp's te vergelijken (snel)
