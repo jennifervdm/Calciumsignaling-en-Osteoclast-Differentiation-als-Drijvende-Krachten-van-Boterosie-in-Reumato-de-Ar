@@ -307,111 +307,67 @@ kegg = enrichKEGG(
 
 # Voer nu de GO-analyse (enriched gene ontology terms) uit
 # Hierbij kijk je naar de functies van genen 
-# Je hebt een aantal packages nodig (geen idee welke...)
-library(BiocManager)
-library(tidyverse)
-library(dplyr)
-BiocManager::install("goseq")
-browseVignettes("goseq")
-library(goseq)
-BiocManager::install("geneLenDataBase")
-library(geneLenDataBase)
-BiocManager::install(org.Dm.eg.db)
-library(org.Dm.eg.db)
-# Overige packages
-library(Rsubread)
-library(Rsamtools)
-library(DESeq2)
-library(pathview)
-
-
-
-
-BiocManager::install("DESeq2")
-browseVignettes("DESeq2")
-library(DESeq2)
 
 setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/Data_RA_raw/")
 getwd()
 
-
-
-install.packages("BiocManager", repos = "https://cloud.r-project.org")
-
+# Tutorial: https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
 source("http://bioconductor.org/biocLite.R")
-biocLite("goseq")
-#package to pull out annotated information about our genome and genes  
-biocLite("geneLenDataBase")   				
-#package to load the GO terms specific to drosophilia
-biocLite("org.Dm.eg.db")
+install.packages("BiocManager")
+BiocManager::install(c(
+  "goseq",
+  "org.Hs.eg.db",
+  "AnnotationDbi"))
+BiocManager::install(c(
+  "DESeq2"))
+
+library(goseq)
+library(org.Hs.eg.db)
+library(AnnotationDbi)
+# Bekijk type ID codes, we hebben SYMBOL (ID: 5S-rRNA), Entrez (ID: 7157) is nodig
+head(resultaten_RA)
+# Bekijk de data of de gen namen op kolommen staan
+colnames(resultaten_RA)
+# Maak een vector voor de genen, nu wordt gekeken welke wel significant zijn (1 vs 0)
+gene.vector <- as.integer(resultaten_RA$padj < 0.05)
+names(gene.vector) <- rownames(resultaten_RA)
+
+# Verwijder NA
+keep <- !is.na(resultaten_RA$padj)
+gene.vector <- gene.vector[keep]
+names(gene.vector) <- rownames(resultaten_RA)[keep]
+
+# Check keys
+keys <- names(gene.vector)
+head(keys)
+length(keys)
+
+# Verander ID codes van SYMBOL naar ENTREZ
+mapping <- mapIds(
+  org.Hs.eg.db,
+  keys = keys,
+  column = "ENTREZID",
+  keytype = "SYMBOL",
+  multiVals = "first")
+
+# Verander de ID codes nu naar een ENTREZ ID
+names(gene.vector) <- mapping
+gene.vector <- gene.vector[!is.na(names(gene.vector))]
+
+# GOseq uitvoeren
+pwf <- nullp(gene.vector, "hg38", "knownGene")
+# Bekijk welke processen veel voorkomen in de lijst
+GO.wall <- goseq(pwf, "hg38", "knownGene")
+head(GO.wall)
+
+# De data weergeeft category, over_represented_pvalue en nog een aantal sets
+# Vooral de biologische processen zijn interessant, ook de p-waarde kan handig zijn
+# In deze analyse vind je voornamelijk pathways die met het immuunsysteem te maken hebben
+# Het meest interessante voor dit onderzoek is juist wat minder voorkomende processen
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-#Mogelijk nog handig?
-# Je hebt een vector met alle genen en differentieel tot expressie gebrachte genen
-# Hiervoor moet eerst je data gelezen worden
-gene.vector <- as.integer(assayed.genes %in% de.genes)
-names(gene.vector) <- assayed.genes
-head(gene.vector)
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Geen idee of dit nog handig is.....
-supportedOrganisms() %>% filter(str_detect(Genome, "hg19"))
-
-
-# Rijnamen opslaan, zodat je die kan gebruiken voor genen
-rijnamen = rownames(resultaten_RA)
-# Maak dataframe
-dataframe.resultaten_RA = as.data.frame(resultaten_RA)
-head(dataframe.resultaten_RA)
-
-
-# Maak een lijst van differentieel tot expressie gebrachte genen
-sigData <- as.integer(!is.na(shrinkLvV$FDR) & shrinkLvV$FDR < 0.05)
-names(sigData) <- shrinkLvV$GeneID
-
-pwf <- nullp(sigData, "hg19", "geneSymbol", bias.data = shrinkLvV$medianTxLength)
-
-goResults <- goseq(pwf, "hg19","ensGene", test.cats=c("GO:BP"))
-
-goResults %>% 
-  top_n(10, wt=-over_represented_pvalue) %>% 
-  mutate(hitsPerc=numDEInCat*100/numInCat) %>% 
-  ggplot(aes(x=hitsPerc, 
-             y=term, 
-             colour=over_represented_pvalue, 
-             size=numDEInCat)) +
-  geom_point() +
-  expand_limits(x=0) +
-  labs(x="Hits (%)", y="GO term", colour="p value", size="Count")
-
-
-
-
-# Count matrix + resultaten + 
-# Uiteindelijk een Go analyse, die moet zelf uitgezocht worden
 # Zelf kiezen welke biologissche pathway? ahv Go analyse kiezen
 # volcano, go analyse, pathview/deseq2(?)
 # Kies biologische pathway, bespreek in discussie
