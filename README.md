@@ -35,6 +35,8 @@ In dit onderzoek legt de focus op genen waar minder onderzoek naar gedaan is 
 width = “600”/>
 </p>
 
+![img](assets/Volcanoplot_RA.png)
+
 
 ## Conclusie
 
@@ -43,6 +45,4 @@ width = “600”/>
 ## Bronnen
 <a id="chetina2019"></a> Chetina, E. V., & Markova, G. A. (2019). Prospects for the Use of Gene Expression Analysis in Rheumatology. Biochemistry (Moscow), Supplement Series B: Biomedical Chemistry, 13(1), 13-25. <https://doi.org/10.1134/S1990750819010049>
 
-
-Hier zijn alle gebruikte [bronnen](bronnen/Casus-RA_Bronnenlijst.pdf).
 
