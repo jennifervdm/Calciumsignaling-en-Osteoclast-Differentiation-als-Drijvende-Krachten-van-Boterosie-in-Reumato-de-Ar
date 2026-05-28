@@ -370,7 +370,17 @@ GO_overrep_p05_vector <- GO.wall$category[GO.wall$over_represented_pvalue<.05]
 GO_overrep_p05 <- GO.wall[GO.wall$category %in% GO_overrep_p05_vector, ]
 View(GO_overrep_p05)
 
-GO.wall 
+
+library(GO.db)
+capture.output(for(go in GO_overrep_p05_vector[1:1517]) { print(GOTERM[[go]])
+  cat("--------------------------------------\n")
+}
+, file="GO-analyse_sig.txt")
+
+
+
+
+
 # De data weergeeft category, over_represented_pvalue en nog een aantal sets
 # Vooral de biologische processen zijn interessant, ook de p-waarde kan handig zijn
 # In deze analyse vind je voornamelijk pathways die met het immuunsysteem te maken hebben
