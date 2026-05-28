@@ -2,12 +2,11 @@
 ## 📁 Inhoud/structuur
 
 - `data/raw/` – Ruwe data afkomstig van 8 individuen, waarvan 4 RA hebben, en 4 gezond zijn.  
-- `data/processed` - Verwerkte datasets gegenereerd met scripts 
-- `scripts/` – Scripts waarin de data geanalyseerd wordt
-- `resultaten/` - Figuren zoals grafieken en tabellen
-- `bronnen/` - Gebruikte bronnen en AI gebruik
-- `README.md` - Het document om de tekst hier te genereren
-- `assets/` - Overige documenten voor de opmaak van deze pagina
+- `scripts/` – Scripts waarin de data geanalyseerd wordt.
+- `resultaten/` - Figuren zoals grafieken en tabellen.
+- `bronnen/` - Gebruikte bronnen en AI gebruik.
+- `README.md` - Het document om de tekst hier te genereren.
+- `assets/` - Overige documenten voor de opmaak van deze pagina.
 - `data_stewardship/` - Aantoning van de competentie Beheren niveau I 
 
 ---
@@ -21,6 +20,9 @@ Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoe
 In dit onderzoek wordt een transcriptomics analyse uitgevoerd. De nadruk wordt gelegd op genen waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van alle processen en pathways die betrokken zijn bij RA, met behulp van een VolcanoPlot, GO-analyse en KEGG pathway-analyse.
 
 ## Methoden
+
+alt = “Figuur 1. Flowchart van het proces.....
+![img](assets/Flowchart_RA.png)
 
 Er wordt ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie. De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42). De verkregen data is uitgewerkt in R V4.5.2.
 
@@ -37,22 +39,27 @@ Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.d
 -
 
 -
-alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
 
-![img](assets/Volcanoplot_RA.png)
+alt = “Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
+![img](resultaten/Volcanoplot_RA.png)
 
 
-alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
-
-![img](assets/hsa04662.pathview_RA.png)
+alt = “Figuur 3. KEGG pathway van het .. gen.
+![img](resultaten/hsa04662.pathview_RA.png)
 
 
 ## Conclusie
 
 -
 
+-
+
+-
+
+
 ## Bronnen
-NOG NIET OP VOLGORDE
+**NOG NIET OP VOLGORDE**
+
 <a id="chetina2019"></a> Chetina, E. V., & Markova, G. A. (2019). Prospects for the Use of Gene Expression Analysis in Rheumatology. Biochemistry (Moscow), Supplement Series B: Biomedical Chemistry, 13(1), 13-25. <https://doi.org/10.1134/S1990750819010049>
 
 <a id="freeley2025"></a> Freeley, M. (2025). CAR T Cell Therapy for Rheumatoid Arthritis. Clinical Reviews in Allergy & Immunology, 68(1), 100. <https://doi.org/10.1007/s12016-025-09113-7>
@@ -67,3 +74,8 @@ NOG NIET OP VOLGORDE
 
 <a id="ncbi2022"></a>Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026, van <https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>
 
+<a id="???"></a>
+
+<a id="???"></a>
+
+<a id="???"></a>
