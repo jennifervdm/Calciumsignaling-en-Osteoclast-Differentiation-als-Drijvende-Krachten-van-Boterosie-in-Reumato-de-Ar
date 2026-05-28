@@ -21,9 +21,7 @@ buildindex(basename = 'ref_human',
            indexSplit = TRUE)
 
 # Mappen data
-
 # Downloaden alle samples
-
 align.SRR4785819 <- align(index = "ref_human",
                          readfile1 = "SRR4785819_1_subset40k.fastq",
                          readfile2 = "SRR4785819_2_subset40k.fastq",
@@ -90,7 +88,7 @@ lapply(samples, function(s) {sortBam(file = paste0(s, '.BAM'), destination = pas
 lapply(samples, function(s) {indexBam(file = paste0(s, '.sorted.bam'))
 })
 
-#---- 
+#----
 # Count Matrix
 library(Rsubread)
 setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/Data_RA_raw/")
@@ -128,7 +126,8 @@ counts = count_matrix$counts
 # Check counts (kan ook in nieuw tabblad)
 head(counts)
 write.csv(counts, "human_countmatrix.csv")
-# Nu wordt de volledige versie gestuurd door een docent
+# In dit geval wordt de volledige versie gestuurd door een docent
+
 #----
 # Statistiek en analyse
 # Inladen tekstbestand
@@ -139,28 +138,17 @@ count_matrix_RA = read.delim("count_matrix_RA.txt")
 head(count_matrix_RA)
 str(count_matrix_RA)
 
-# Download packages DESeq2, KEGGREST, EnhancedVolcano en pathview
+# Download packages DESeq2 en EnhancedVolcano
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("DESeq2")
-
-if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-BiocManager::install("KEGGREST")
-
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("EnhancedVolcano")
 
-if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-BiocManager::install("pathview")
-
 # Inladen packages
 library(DESeq2)
-library(KEGGREST)
 library(EnhancedVolcano)
-library(pathview)
 
 # Metadata
 # Maak een vector met categoriën van de behandelingen uit je dataset
@@ -222,6 +210,7 @@ laagste_p_waarde_RA = resultaten_RA[order(resultaten_RA$padj, decreasing = FALSE
 head(hoogste_fold_change_RA)
 head(laagste_fold_change_RA)
 head(laagste_p_waarde_RA)
+
 # Maak de Volcano plot
 VolcanoPlot_RA = EnhancedVolcano(resultaten_RA,
                 lab = rownames(resultaten_RA),
@@ -237,85 +226,55 @@ dev.copy(png, 'Volcanoplot_RA.png',
          height = 10,
          units = 'in',
          res = 500)
-# Sluit dev om de afbeelding in downloads te kunnen zien
-dev.off()
-
-
-# Nu een plot met interessante genen die niet te maken hebben met T-cellen
-Interessante_Genen = subset(
-  resultaten_RA)
-# Filter de genen die met T-cellen te maken hebben
-Tcel_Genen = c("CD3D", "CD3E", "CD4", "CD8A", "CD28", "CXCR1", "HLA-V", "RAB3IL1", "SRGN", "BCL2A1", "PTGFR", "ADAMDEC1")
-# Maak de nieuwe dataset
-Interessante_Genen = Interessante_Genen[
-  !(rownames(Interessante_Genen) %in% Tcel_Genen), ]
-# Maak de Volcano Plot met interessante genen
-VolcanoPlot_RA_Interessante_Genen = EnhancedVolcano(Interessante_Genen,
-                                 lab = rownames(Interessante_Genen),
-                                 x = 'log2FoldChange',
-                                 y = 'padj')
-
-VolcanoPlot_RA_Interessante_Genen + scale_x_continuous(
-  limits = c(-13, 13),
-  breaks = seq(-14, 14, by = 2))
-# Download de Volcano plot
-dev.copy(png, 'Volcanoplot_RA_Interessante_Genen.png', 
-         width = 10,
-         height = 10,
-         units = 'in',
-         res = 500)
-# Sluit dev om de afbeelding in downloads te kunnen zien
+# Sluit dev om de afbeelding in de wd te kunnen zien
 dev.off()
 
 
 
-
-
-
+#----
+# Pathway analyse
+# Download clusterProfiler, pathview en KEGGREST
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
 BiocManager::install("clusterProfiler")
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("pathview")
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install("KEGGREST")
+
+# Inladen packages
 library(clusterProfiler)
+library(pathview)
+library(KEGGREST)
 
-kegg = enrichKEGG(
-  gene = entrez_ids,
-  organism = "hsa"
-)
-
-
-
+# KEGG pathway-analyse, dit kan per gen worden uitgevoerd
 # Voer nu de pathway analyse uit
 # Hierbij worden de KEGG-pathways bekeken en vergeleken met de resultaten
 # Zo wordt duidelijk welke pathways betrokken zijn bij bepaalde genen
 # Op de website kegg.jp kunnen pathways gemapt worden met genen uit de Volcano plot
 # Website: https://www.kegg.jp/kegg-bin/show_organism?menu_type=pathway_maps&org=hsa
+kegg = enrichKEGG(
+  gene = entrez_ids,
+  organism = "hsa")
 
+#
+pathview_vector <- resultaten_RA$log2FoldChange
+names(pathview_vector) <- row.names(resultaten_RA)
+head(pathview_vector)
 
+pathview(
+  gene.data = pathview_vector,
+  pathway.id = "hsa04662",
+  species = "hsa",
+  gene.idtype = "SYMBOL",
+  limit = list(gene = 5))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#---
+# GO-analyse
 # Voer nu de GO-analyse (enriched gene ontology terms) uit
 # Hierbij kijk je naar de functies van genen 
-
-setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/Data_RA_raw/")
-getwd()
-
 # Tutorial: https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
 source("http://bioconductor.org/biocLite.R")
 install.packages("BiocManager")
@@ -377,11 +336,7 @@ capture.output(for(go in GO_overrep_p05_vector[1:1517]) { print(GOTERM[[go]])
 }
 , file="GO-analyse_sig.txt")
 
-
-
-
-
 # De data weergeeft category, over_represented_pvalue en nog een aantal sets
 # Vooral de biologische processen zijn interessant, ook de p-waarde kan handig zijn
 # In deze analyse vind je voornamelijk pathways die met het immuunsysteem te maken hebben
-# Het meest interessante voor dit onderzoek zijn juist wat minder voorkomende processen
+# Het meest interessante voor dit onderzoek zijn juist wat minder onderzochte processen
