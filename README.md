@@ -14,7 +14,7 @@
 
 ## Inleiding
 
-Reumatoïde artritis (RA) is een veelvoorkomend autoimmuunziekte die hoofdzakelijk voorkomt naarmate mensen ouder worden. In 2024 waren er zo’n 200.000 Nederlanders met deze aandoening (VZinfo). RA wordt gekenmerkt door synoviale hyperplasie met pannusvorming (Chetina & Markova, 2019). Synovium, een type slijmvlies is een bindweefsel wat in gewrichten voorkomt. Bij een RA patient is is dit membraan verdikt en ontstoken, wat lijdt tot de erosie van bot- en kraakbeenweefsel wegens vorming en overname van pannusweefsel (Gravallese & Monach, 2015). Momenteel focust onderzoek zich op de genen die met T-cellen te maken hebben (Padyukov, 2022). Er zijn al kleine klinische studies bezig met een mogelijk geneesmiddel, CAR T-celtherapie (Freeley, 2025). Uiteraard is het van belang om meer informatie te verzamelen over andere genen die wellicht een rol spelen, met doel van een dieper begrip krijgen van de aandoening.
+Reumatoïde artritis (RA) is een veelvoorkomend autoimmuunziekte die hoofdzakelijk voorkomt naarmate mensen ouder worden. In 2024 waren er zo’n 200.000 Nederlanders met deze aandoening (VZinfo). RA wordt gekenmerkt door synoviale hyperplasie met pannusvorming [(Chetina & Markova, 2019)](chetina2019). Synovium, een type slijmvlies is een bindweefsel wat in gewrichten voorkomt. Bij een RA patient is is dit membraan verdikt en ontstoken, wat lijdt tot de erosie van bot- en kraakbeenweefsel wegens vorming en overname van pannusweefsel (Gravallese & Monach, 2015). Momenteel focust onderzoek zich op de genen die met T-cellen te maken hebben (Padyukov, 2022). Er zijn al kleine klinische studies bezig met een mogelijk geneesmiddel, CAR T-celtherapie (Freeley, 2025). Uiteraard is het van belang om meer informatie te verzamelen over andere genen die wellicht een rol spelen, met doel van een dieper begrip krijgen van de aandoening.
 
 Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoek. Het transcriptoom, wat hierbij onderzocht wordt, geeft informatie over hoeveelheid expressie in alle genen. Naar het kijken van de functies van genen met hoge expressie, kan een beeld worden geschetst van de basis processen die plaatsvinden bij zieke individuen, in vergelijking met gezonde personen (Monzó et al., 2025).
 
@@ -31,7 +31,7 @@ In dit onderzoek legt de focus op genen waar minder onderzoek naar gedaan is 
 
 -
 <p align =”center”>
-<img src = “assets/Volcanoplot_RA.png” alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen(n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
+<img src = “assets/Volcanoplot_RA.png” alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
 width = “600”/>
 </p>
 
@@ -41,6 +41,8 @@ width = “600”/>
 -
 
 ## Bronnen
+<a id="chetina2019"></a> Chetina, E. V., & Markova, G. A. (2019). Prospects for the Use of Gene Expression Analysis in Rheumatology. Biochemistry (Moscow), Supplement Series B: Biomedical Chemistry, 13(1), 13-25. <https://doi.org/10.1134/S1990750819010049>
+
 
 Hier zijn alle gebruikte [bronnen](bronnen/Casus-RA_Bronnenlijst.pdf).
 
