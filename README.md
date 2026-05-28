@@ -42,6 +42,11 @@ alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gez
 ![img](assets/Volcanoplot_RA.png)
 
 
+alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
+
+![img](assets/hsa04662.pathview_RA.png)
+
+
 ## Conclusie
 
 -
