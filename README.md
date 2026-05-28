@@ -20,7 +20,8 @@ Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoe
 
 In dit onderzoek legt de focus op genen waar minder onderzoek naar gedaan is om een uitgebreider beeld te geven van de processen die betrokken zijn bij RA.
 ## Methoden
-
+Referentiegenoom:
+FASTA: fastq. en gtf.
 -
 
 -
@@ -28,9 +29,9 @@ In dit onderzoek legt de focus op genen waar minder onderzoek naar gedaan is 
 ## 📊 Resultaten
 
 -
-
+`hoi :+) voor code blokken`
 -
- alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
+alt = “Figuur 1. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.”
 
 ![img](assets/Volcanoplot_RA.png)
 
