@@ -28,7 +28,7 @@ Bij data mapping wordt een index gebouwd met `BiocManager` V1.30.27 package `Rsu
 
 Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de `BiocManager` packages `DESeq2` V1.50.2 en `EnhancedVolcano` V1.28.2 nodig. Een DESeq dataset wordt aangemaakt. De VolcanoPlot bevat de log2FoldChange en gecorrigeerde P-waarde <0.05.
 
-Pathway analyses vereisen `clusterProfiler` V????, `pathview`  V1.50.0 en `KEGGREST` V1.50.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
+Pathway analyses vereisen `pathview` V1.50.0 en `KEGGREST` V1.50.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
 
 Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.db` V3.22.0 en `AnnotationDbi` V1.72.0. Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt.
 
