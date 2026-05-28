@@ -1,13 +1,13 @@
 # Transcriptomics van reumatoïde artritis
 ## 📁 Inhoud/structuur
-
-- `data/raw/` – Ruwe data afkomstig van 8 individuen, waarvan 4 RA hebben, en 4 gezond zijn.  
-- `scripts/` – Scripts waarin de data geanalyseerd wordt.
-- `resultaten/` - Figuren zoals grafieken en tabellen.
-- `bronnen/` - Gebruikte bronnen en AI gebruik.
+- `assets` - Overige documenten voor de opmaak van deze pagina.
+- `bronnen` - Gebruikte bronnen en AI gebruik.
+- `data processed` – Bewerkte data voor helder overzicht van resultaten en uitvoeren van analyses. 
+- `data raw` – Ruwe data afkomstig van 8 individuen, waarvan 4 RA hebben, en 4 gezond zijn.  
+- `data_stewardship` - Aantoning van de competentie Beheren niveau I 
+- `scripts` – Scripts waarin de data geanalyseerd wordt.
+- `resultaten` - Figuren zoals grafieken en tabellen.
 - `README.md` - Het document om de tekst hier te genereren.
-- `assets/` - Overige documenten voor de opmaak van deze pagina.
-- `data_stewardship/` - Aantoning van de competentie Beheren niveau I 
 
 ---
 
