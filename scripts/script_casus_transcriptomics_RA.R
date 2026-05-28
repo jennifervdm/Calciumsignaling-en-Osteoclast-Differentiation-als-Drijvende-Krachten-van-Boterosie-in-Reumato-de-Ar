@@ -97,7 +97,7 @@ getwd()
 # Zorg dat GTF uit dezelfde database komt als GCF van eerder, anders kunnen er kleine variaties zijn
 # Vergelijken BAM met GTF in een lijst (meerdere matrixen)
 # Wat doet featureCounts en zijn zijn functies?
-?featureCounts
+??featureCounts
 # Nu gaan we hetzelfde doen met alle samples in 1 lijst
 # Eerst een matrix maken voor alle samples
 all.samples = c('SRR4785819.BAM',
@@ -161,8 +161,11 @@ treatment_RA= c("Control",
                 "Rheumatoid arthritis (established)", 
                 "Rheumatoid arthritis (established)")
 treatment_RA
-# Maak een tabel voor de dataframe
+# Maak een tabel voor de Metadataframe
 treatment_table_RA = data.frame(treatment_RA)
+View(treatment_table_RA)
+# Download de Metadata
+write.csv2(treatment_table_RA, "Metadata_RA.csv")
 # Verander de kolomnamen van de .BAM files, zodat het geen .BAM meer heet
 colnames(count_matrix_RA) = c("Control1", 
                               "Control2", 
@@ -245,7 +248,7 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("KEGGREST")
 
 # Inladen packages
-library(clusterProfiler)
+# library(clusterProfiler) evt. visualisatie GO-analyse https://doi.org/10.1089/omi.2011.0118
 library(pathview)
 library(KEGGREST)
 
@@ -259,11 +262,12 @@ kegg = enrichKEGG(
   gene = entrez_ids,
   organism = "hsa")
 
-#
+# Maak de vector nodig voor de analyse
 pathview_vector <- resultaten_RA$log2FoldChange
 names(pathview_vector) <- row.names(resultaten_RA)
 head(pathview_vector)
 
+# Doe de analyse
 pathview(
   gene.data = pathview_vector,
   pathway.id = "hsa04662",
@@ -324,11 +328,9 @@ pwf <- nullp(gene.vector, "hg38", "knownGene")
 GO.wall <- goseq(pwf, "hg38", "knownGene")
 head(GO.wall)
 
-
 GO_overrep_p05_vector <- GO.wall$category[GO.wall$over_represented_pvalue<.05]
 GO_overrep_p05 <- GO.wall[GO.wall$category %in% GO_overrep_p05_vector, ]
 View(GO_overrep_p05)
-
 
 library(GO.db)
 capture.output(for(go in GO_overrep_p05_vector[1:1517]) { print(GOTERM[[go]])
