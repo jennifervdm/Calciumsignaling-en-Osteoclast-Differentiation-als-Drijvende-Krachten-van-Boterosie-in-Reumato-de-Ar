@@ -14,14 +14,24 @@
 
 ## Inleiding
 
-Reumatoïde artritis (RA) is een veelvoorkomend autoimmuunziekte die hoofdzakelijk voorkomt naarmate mensen ouder worden. In 2024 waren er zo’n 200.000 Nederlanders met deze aandoening (VZinfo). RA wordt gekenmerkt door synoviale hyperplasie met pannusvorming [(Chetina & Markova, 2019)](#chetina2019). Synovium, een type slijmvlies is een bindweefsel wat in gewrichten voorkomt. Bij een RA patient is is dit membraan verdikt en ontstoken, wat lijdt tot de erosie van bot- en kraakbeenweefsel wegens vorming en overname van pannusweefsel (Gravallese & Monach, 2015). Momenteel focust onderzoek zich op de genen die met T-cellen te maken hebben (Padyukov, 2022). Er zijn al kleine klinische studies bezig met een mogelijk geneesmiddel, CAR T-celtherapie (Freeley, 2025). Uiteraard is het van belang om meer informatie te verzamelen over andere genen die wellicht een rol spelen, met doel van een dieper begrip krijgen van de aandoening.
+Reumatoïde artritis (RA) is een veelvoorkomende autoimmuunziekte. In 2024 waren er zo’n 200.000 Nederlanders met deze aandoening (VZinfo). RA wordt gekenmerkt door synoviale hyperplasie met pannusvorming [(Chetina & Markova, 2019)](#chetina2019)[(Chetina & Markova, 2019)](#chetina2019). Synovium, een type slijmvlies raakt ontstoken, wat lijdt tot de erosie van bot- en kraakbeenweefsel wegens vorming en overname van pannusweefsel (Gravallese & Monach, 2015). Momenteel focust onderzoek zich op de genen die met T-cellen te maken hebben (Padyukov, 2022). Er zijn al kleine klinische studies bezig met een mogelijk geneesmiddel, CAR T-celtherapie (Freeley, 2025). 
 
 Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoek. Het transcriptoom, wat hierbij onderzocht wordt, geeft informatie over hoeveelheid expressie in alle genen. Naar het kijken van de functies van genen met hoge expressie, kan een beeld worden geschetst van de basis processen die plaatsvinden bij zieke individuen, in vergelijking met gezonde personen (Monzó et al., 2025).
 
-In dit onderzoek legt de focus op genen waar minder onderzoek naar gedaan is om een uitgebreider beeld te geven van de processen die betrokken zijn bij RA.
+In dit onderzoek wordt een transcriptomics analyse uitgevoerd. De nadruk wordt gelegd op genen waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van alle processen en pathways die betrokken zijn bij RA, met behulp van een VolcanoPlot, GO-analyse en KEGG pathway-analyse.
+
 ## Methoden
-Referentiegenoom:
-FASTA: fastq. en gtf.
+Referentiegenoom:opzoeken en indexeren (FASTA: fastq. en gtf.)???
+
+KEGG pathway
+Genexpressie bepalen aan de hand van de DESeq2 V*versie* package in R
+Bepalen verschillende gene ontologies in R
+
+
+
+
+
+
 -
 
 -
