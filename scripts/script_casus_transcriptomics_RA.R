@@ -305,6 +305,11 @@ kegg = enrichKEGG(
 
 
 
+
+
+
+
+
 # Voer nu de GO-analyse (enriched gene ontology terms) uit
 # Hierbij kijk je naar de functies van genen 
 
@@ -360,14 +365,13 @@ pwf <- nullp(gene.vector, "hg38", "knownGene")
 GO.wall <- goseq(pwf, "hg38", "knownGene")
 head(GO.wall)
 
+
+GO_overrep_p05_vector <- GO.wall$category[GO.wall$over_represented_pvalue<.05]
+GO_overrep_p05 <- GO.wall[GO.wall$category %in% GO_overrep_p05_vector, ]
+View(GO_overrep_p05)
+
+GO.wall 
 # De data weergeeft category, over_represented_pvalue en nog een aantal sets
 # Vooral de biologische processen zijn interessant, ook de p-waarde kan handig zijn
 # In deze analyse vind je voornamelijk pathways die met het immuunsysteem te maken hebben
-# Het meest interessante voor dit onderzoek is juist wat minder voorkomende processen
-
-
-
-
-# Zelf kiezen welke biologissche pathway? ahv Go analyse kiezen
-# volcano, go analyse, pathview/deseq2(?)
-# Kies biologische pathway, bespreek in discussie
+# Het meest interessante voor dit onderzoek zijn juist wat minder voorkomende processen
