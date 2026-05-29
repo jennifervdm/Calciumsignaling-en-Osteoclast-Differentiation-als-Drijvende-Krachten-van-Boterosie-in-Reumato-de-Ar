@@ -27,10 +27,9 @@ Bij data mapping wordt een index gebouwd met `BiocManager` V1.30.27/V3.22 packag
 
 Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de `BiocManager` packages `DESeq2` V1.50.2 en `EnhancedVolcano` V1.28.2 nodig. Een DESeq dataset wordt aangemaakt. De VolcanoPlot bevat de log2FoldChange en gecorrigeerde P-waarde <0.05.
 
-Pathway analyses vereisen `clusterProfiler` V4.18.4 `pathview` V1.50.0, `KEGGREST` V1.50.0  `org.Hs.eg.db` V3.22.0 en `AnnotationDbi` V1.72.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
-
 Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.db` en `AnnotationDbi`. Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt.
 
+Pathway analyses vereisen `clusterProfiler` V4.18.4 `pathview` V1.50.0, `KEGGREST` V1.50.0  `org.Hs.eg.db` V3.22.0 en `AnnotationDbi` V1.72.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
 
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png" alt="Flowchart Methode" width="600"/>
@@ -39,9 +38,7 @@ Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.d
 
 ## 📊 Resultaten
 
--
 
--
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png" alt="Resultaten Volcanoplot" width="600"/>
 </p>
@@ -53,6 +50,15 @@ Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.d
   <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
 Figuur 3. KEGG pathway van het ... gen.
+\
+
+
+Bij het inlezen van de GO-analyse was de meest significante data gerelateerd aan de T-cel. Dit was te verwachten wegens een grote focus op dit gebied binnen onderzoek. Echter waren relatief weinig ontologieën ongerelateerd aan immuuncellen en waren sommige ontologieën.
+
+[Gene Ontology](<https://amigo.geneontology.org/amigo/term/GO:0030316>)
+
+
+
 
 ## Conclusie
 
