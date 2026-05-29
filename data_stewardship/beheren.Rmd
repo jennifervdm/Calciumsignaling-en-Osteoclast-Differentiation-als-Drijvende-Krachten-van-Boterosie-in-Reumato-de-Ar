@@ -2,9 +2,9 @@ Databeheer moet altijd zorgvuldig bijgehouden worden.
 Als dit niet op orde is, kan data onvindbaar en onbruikbaar worden of compleet verloren gaan. 
 Ook kunnen datalekken ontstaan van gevoelige informatie, wat een compleet nieuwe reeks aan problemen met zich meedraagt. 
 Bij goed databeheer hoort een duidelijke mappenstructuur met aparte mappen voor elk project inclusief onderverdeling van bestanden. 
-hierbij aan assets, bronnen, data (onderverdeeld in ruwe en bewerkte data), resultaten en scripts. 
+Hierbij horen assets, bronnen, data (eventueel onderverdeeld in ruwe en bewerkte data), resultaten en scripts.
 Hierdoor blijft het project overzichtelijk en is alles snel terug te vinden. 
-In het werkveld is dit vooral belangrijk bij groepsprojecten of als iemand anders bezig moet met de gegenereerde data. 
+In het werkveld is dit vooral belangrijk bij groepsprojecten of als een collega bezig gaat met de gegenereerde data. 
 Naast mappen, is het ook belangrijk om een consistente naamgeving aan je bestanden te geven. 
 Elk bedrijf heeft andere eisen, maar veelvoorkomend zijn de datum, gebruikte techniek, projectnaam, auteur en versie. 
 Versiebeheer (VCS) is een benaming vaak gebruikt in software ontwikkeling om verschillende varianten van een enkel bestand op te slaan, dit dient als een manier om backups te maken en overschrijven van bestanden tegen te gaan. 
@@ -13,9 +13,9 @@ Gebruik altijd specifieke benamingen voor variabelen, vectoren, matrices en tabe
 Zorg ook voor notaties binnen scripts. 
 Met de # kan in de code een uitleg of onderbouwing gegeven worden zodat ook anderen je scripts kunnen begrijpen. 
 Voor het delen van scripts kan GitHub gebruikt worden. 
-Dit functioneert vergelijkbaar als een mappenstructuur op een computer, maar kan ook in samenwerking worden gebruikt. 
-Ook kunnen scripts openbaar of privé gezet, afhankelijk van het doel van het project. 
-In privé repositories kunnen alleen bevoegde personen meewerken. 
-Het belangrijk om gevoelige of persoonlijke data veilig te bewaren door de bestanden te versleutelen en te zorgen dat softwares en drivers regelmatig geüpdate worden.
-Gevoelige en persoonlijke data kan nooit openbaar gesteld worden zonder toestemming, dus moet zorgvuldig gewerkt worden. 
-Daarintegen is open data toegankelijk voor iedereen, wat in het belang is voor een breder publiek voor hergebruik en transparantie van resultaten.
+Dit functioneert vergelijkbaar met een mappenstructuur op een computer, maar kan ook in samenwerking worden gebruikt. 
+Ook kunnen scripts openbaar of privé worden gezet, afhankelijk van het doel van het project. 
+In privé repositories kunnen alleen bevoegde personen meewerken.
+Het is uiterst belangrijk om gevoelige of persoonlijke data veilig te bewaren door de bestanden te versleutelen (encrypten) en te zorgen dat softwares en drivers regelmatig geüpdate worden.
+Gevoelige en persoonlijke data mag nooit openbaar gesteld worden zonder toestemming, dus moet zorgvuldig gewerkt worden. 
+Open data is toegankelijk voor iedereen, wat in het belang staat voor een breder publiek, met doel als hergebruik en als transparantie van resultaten.
