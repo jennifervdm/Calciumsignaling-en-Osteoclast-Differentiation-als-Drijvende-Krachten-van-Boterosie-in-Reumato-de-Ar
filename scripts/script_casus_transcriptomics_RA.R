@@ -235,6 +235,75 @@ dev.copy(png, 'Volcanoplot_RA.png',
 dev.off()
 
 
+#---
+# GO-analyse
+# Voer nu de GO-analyse (enriched gene ontology terms) uit
+# Hierbij kijk je naar de functies van genen 
+# Tutorial: https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
+source("http://bioconductor.org/biocLite.R")
+install.packages("BiocManager")
+BiocManager::install(c(
+  "goseq",
+  "org.Hs.eg.db",
+  "AnnotationDbi"))
+BiocManager::install(c(
+  "DESeq2"))
+
+library(goseq)
+library(org.Hs.eg.db)
+library(AnnotationDbi)
+# Bekijk type ID codes, we hebben SYMBOL (ID: 5S-rRNA), Entrez (ID: 7157) is nodig
+head(resultaten_RA)
+# Bekijk de data of de gen namen op kolommen staan
+colnames(resultaten_RA)
+# Maak een vector voor de genen, nu wordt gekeken welke wel significant zijn (1 vs 0)
+gene.vector <- as.integer(resultaten_RA$padj < 0.05)
+names(gene.vector) <- rownames(resultaten_RA)
+
+# Verwijder NA
+keep <- !is.na(resultaten_RA$padj)
+gene.vector <- gene.vector[keep]
+names(gene.vector) <- rownames(resultaten_RA)[keep]
+
+# Check keys
+keys <- names(gene.vector)
+head(keys)
+length(keys)
+
+# Verander ID codes van SYMBOL naar ENTREZ
+mapping <- mapIds(
+  org.Hs.eg.db,
+  keys = keys,
+  column = "ENTREZID",
+  keytype = "SYMBOL",
+  multiVals = "first")
+
+# Verander de ID codes nu naar een ENTREZ ID
+names(gene.vector) <- mapping
+gene.vector <- gene.vector[!is.na(names(gene.vector))]
+
+# GOseq uitvoeren
+pwf <- nullp(gene.vector, "hg38", "knownGene")
+# Bekijk welke processen veel voorkomen in de lijst
+GO.wall <- goseq(pwf, "hg38", "knownGene")
+head(GO.wall)
+
+GO_overrep_p05_vector <- GO.wall$category[GO.wall$over_represented_pvalue<.05]
+GO_overrep_p05 <- GO.wall[GO.wall$category %in% GO_overrep_p05_vector, ]
+View(GO_overrep_p05)
+
+library(GO.db)
+capture.output(for(go in GO_overrep_p05_vector[1:1517]) { print(GOTERM[[go]])
+  cat("--------------------------------------\n")
+}
+, file="GO-analyse_sig.txt")
+
+# De data weergeeft category, over_represented_pvalue en nog een aantal sets
+# Vooral de biologische processen zijn interessant, ook de p-waarde kan handig zijn
+# In deze analyse vind je voornamelijk pathways die met het immuunsysteem te maken hebben
+# Het meest interessante voor dit onderzoek zijn juist wat minder onderzochte processen
+
+
 #----
 # Pathway analyse
 # Download clusterProfiler, pathview en KEGGREST
@@ -306,71 +375,3 @@ pathview(
   species = "hsa",
   gene.idtype = "SYMBOL",
   limit = list(gene = 5))
-
-#---
-# GO-analyse
-# Voer nu de GO-analyse (enriched gene ontology terms) uit
-# Hierbij kijk je naar de functies van genen 
-# Tutorial: https://cloud.wikis.utexas.edu/wiki/spaces/bioiteam/pages/47732482/GO+Enrichment+using+goseq
-source("http://bioconductor.org/biocLite.R")
-install.packages("BiocManager")
-BiocManager::install(c(
-  "goseq",
-  "org.Hs.eg.db",
-  "AnnotationDbi"))
-BiocManager::install(c(
-  "DESeq2"))
-
-library(goseq)
-library(org.Hs.eg.db)
-library(AnnotationDbi)
-# Bekijk type ID codes, we hebben SYMBOL (ID: 5S-rRNA), Entrez (ID: 7157) is nodig
-head(resultaten_RA)
-# Bekijk de data of de gen namen op kolommen staan
-colnames(resultaten_RA)
-# Maak een vector voor de genen, nu wordt gekeken welke wel significant zijn (1 vs 0)
-gene.vector <- as.integer(resultaten_RA$padj < 0.05)
-names(gene.vector) <- rownames(resultaten_RA)
-
-# Verwijder NA
-keep <- !is.na(resultaten_RA$padj)
-gene.vector <- gene.vector[keep]
-names(gene.vector) <- rownames(resultaten_RA)[keep]
-
-# Check keys
-keys <- names(gene.vector)
-head(keys)
-length(keys)
-
-# Verander ID codes van SYMBOL naar ENTREZ
-mapping <- mapIds(
-  org.Hs.eg.db,
-  keys = keys,
-  column = "ENTREZID",
-  keytype = "SYMBOL",
-  multiVals = "first")
-
-# Verander de ID codes nu naar een ENTREZ ID
-names(gene.vector) <- mapping
-gene.vector <- gene.vector[!is.na(names(gene.vector))]
-
-# GOseq uitvoeren
-pwf <- nullp(gene.vector, "hg38", "knownGene")
-# Bekijk welke processen veel voorkomen in de lijst
-GO.wall <- goseq(pwf, "hg38", "knownGene")
-head(GO.wall)
-
-GO_overrep_p05_vector <- GO.wall$category[GO.wall$over_represented_pvalue<.05]
-GO_overrep_p05 <- GO.wall[GO.wall$category %in% GO_overrep_p05_vector, ]
-View(GO_overrep_p05)
-
-library(GO.db)
-capture.output(for(go in GO_overrep_p05_vector[1:1517]) { print(GOTERM[[go]])
-  cat("--------------------------------------\n")
-}
-, file="GO-analyse_sig.txt")
-
-# De data weergeeft category, over_represented_pvalue en nog een aantal sets
-# Vooral de biologische processen zijn interessant, ook de p-waarde kan handig zijn
-# In deze analyse vind je voornamelijk pathways die met het immuunsysteem te maken hebben
-# Het meest interessante voor dit onderzoek zijn juist wat minder onderzochte processen
