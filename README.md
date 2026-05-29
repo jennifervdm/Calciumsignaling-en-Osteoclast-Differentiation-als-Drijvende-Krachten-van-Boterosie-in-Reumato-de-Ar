@@ -23,7 +23,7 @@ In dit onderzoek wordt een transcriptomics analyse uitgevoerd. De nadruk word
 
 Er wordt ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42). De verkregen data is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomics_RA.R).
 
-Bij data mapping wordt een index gebouwd met `BiocManager` V1.30.27 package `Rsubread` V2.24.0. Hierin worden FASTA bestanden van het RefSeq referentiegenoom [GRCh38.p14](#ncbi2022) van de NCBI genome database gemaakt. Het alignen tot BAM bestanden is in paired-end. Rsamtools V2.26.0 sorteert en indexeert de BAM files. De Count Matrix en BAM files matrix wordt gemaakt aan de hand van een GTF annotatiebestand, nogmaals het NCBI GRCh38.p14 genoom. De counts worden geïsoleerd en als csv opgeslagen.
+Bij data mapping wordt een index gebouwd met `BiocManager` V1.30.27 package `Rsubread` V2.24.0. Hierin worden FASTA bestanden van het RefSeq referentiegenoom [GRCh38.p14](<https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>) van de NCBI genome database gemaakt. Het alignen tot BAM bestanden is in paired-end. Rsamtools V2.26.0 sorteert en indexeert de BAM files. De Count Matrix en BAM files matrix wordt gemaakt aan de hand van een GTF annotatiebestand, nogmaals het NCBI GRCh38.p14 genoom. De counts worden geïsoleerd en als csv opgeslagen.
 
 Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de `BiocManager` packages `DESeq2` V1.50.2 en `EnhancedVolcano` V1.28.2 nodig. Een DESeq dataset wordt aangemaakt. De VolcanoPlot bevat de log2FoldChange en gecorrigeerde P-waarde <0.05.
 
@@ -78,7 +78,7 @@ Figuur 3. KEGG pathway van het ... gen.
 
 <a id="padyukov2022"></a> Padyukov, L. (2022). Genetics of rheumatoid arthritis. Seminars in Immunopathology, 44(1), 47-62. <https://doi.org/10.1007/s00281-022-00912-0>
 
-<a id="ncbi2022"></a>Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026, van <https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>
+Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026, van <https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>
 
 <a id="???"></a>
 
