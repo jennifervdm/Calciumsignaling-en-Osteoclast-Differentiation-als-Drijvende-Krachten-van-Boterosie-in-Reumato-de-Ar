@@ -5,8 +5,8 @@ setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/"
 getwd()
 # Package voor Bioconductor, voor bio data zoals RNA- en DNA-seq
 install.packages('BiocManager')
-library(BiocManager)
 BiocManager::install('Rsubread')
+library(BiocManager)
 library(Rsubread)
 
 # Referentiegenoom downloaden, verplaats GCF file naar working directory
@@ -26,7 +26,6 @@ align.SRR4785819 <- align(index = "ref_human",
                          readfile1 = "SRR4785819_1_subset40k.fastq",
                          readfile2 = "SRR4785819_2_subset40k.fastq",
                          output_file = "SRR4785819.BAM")
-
 
 align.SRR4785820 <- align(index = "ref_human",
                          readfile1 = "SRR4785820_1_subset40k.fastq",
@@ -194,7 +193,6 @@ head(treatment_table_RA)
 dds_RA = DESeqDataSetFromMatrix(countData = count_matrix_RA,
                                 colData = treatment_table_RA,
                                 design = ~treatment_RA)
-
 # Maak de DESeq dataset
 dds_RA = DESeq(dds_RA)
 # Voer de aanalyse uit voor de Volcano plot
@@ -371,7 +369,7 @@ head(pathview_vector)
 # Doe de analyse
 pathview(
   gene.data = pathview_vector,
-  pathway.id = "hsa04662",
+  pathway.id = "hsa04020",
   species = "hsa",
   gene.idtype = "SYMBOL",
   limit = list(gene = 5))
