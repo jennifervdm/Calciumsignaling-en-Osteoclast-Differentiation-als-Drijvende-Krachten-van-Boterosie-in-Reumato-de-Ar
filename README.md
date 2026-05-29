@@ -1,4 +1,4 @@
-# Transcriptomics van reumatoïde artritis
+# Calciumsignaling en Osteoclast Differentiation als Drijvende Krachten van Boterosie in Reumatoïde Artritis
 ## 📁 Inhoud/structuur
 - `assets` - Overige documenten voor de opmaak van deze pagina.
 - `bronnen` - Gebruikte bronnen en AI gebruik.
@@ -8,13 +8,6 @@
 - `scripts` – Scripts waarin de data geanalyseerd wordt.
 - `resultaten` - Figuren zoals grafieken en tabellen.
 - `README.md` - Het document om de tekst hier te genereren.
-
-
-XXXXXXXXX
-zou je in het Nederlands een ~200 woorden resultaten kopje kunnen schrijven van mijn data? Ik heb gekozen voor de GO: 0.005981202 0.9967119 42 105 osteoclast differentiation, pathway van het gen ....
-
-
-
 
 ---
 
