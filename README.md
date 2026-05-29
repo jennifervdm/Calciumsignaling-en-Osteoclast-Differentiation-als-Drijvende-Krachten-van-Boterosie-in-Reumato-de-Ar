@@ -21,7 +21,7 @@ In dit onderzoek wordt een transcriptomics analyse uitgevoerd. De nadruk word
 
 ## Methoden
 
-Er wordt ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42). De verkregen data is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomic_RA.R).
+Er wordt ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42). De verkregen data is uitgewerkt in R V4.5.2 in dit [script](scripts/script\_casus\_transcriptomic_RA.R).
 
 Bij data mapping wordt een index gebouwd met `BiocManager` V1.30.27 package `Rsubread` V2.24.0. Hierin worden FASTA bestanden van het RefSeq referentiegenoom [GRCh38.p14](#ncbi2022) van de NCBI genome database gemaakt. Het alignen tot BAM bestanden is in paired-end. Rsamtools V2.26.0 sorteert en indexeert de BAM files. De Count Matrix en BAM files matrix wordt gemaakt aan de hand van een GTF annotatiebestand, nogmaals het NCBI GRCh38.p14 genoom. De counts worden geïsoleerd en als csv opgeslagen.
 
