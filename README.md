@@ -21,7 +21,7 @@ In dit onderzoek wordt een transcriptomics analyse uitgevoerd. De nadruk word
 
 ## Methoden
 
-Er wordt ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42). De verkregen data is uitgewerkt in R V4.5.2.
+Er wordt ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42). De verkregen data is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomic_RA.R).
 
 Bij data mapping wordt een index gebouwd met `BiocManager` V1.30.27 package `Rsubread` V2.24.0. Hierin worden FASTA bestanden van het RefSeq referentiegenoom [GRCh38.p14](#ncbi2022) van de NCBI genome database gemaakt. Het alignen tot BAM bestanden is in paired-end. Rsamtools V2.26.0 sorteert en indexeert de BAM files. De Count Matrix en BAM files matrix wordt gemaakt aan de hand van een GTF annotatiebestand, nogmaals het NCBI GRCh38.p14 genoom. De counts worden geïsoleerd en als csv opgeslagen.
 
@@ -32,8 +32,10 @@ Pathway analyses vereisen `pathview` V1.50.0 en `KEGGREST` V1.50.0. Een enriched
 Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.db` V3.22.0 en `AnnotationDbi` V1.72.0. Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt.
 
 
-![img](assets/Flowchart_Methode_RA.png)
-*Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en Index worden gemapt naar BAM files. De reads van deze files worden samen met de GTF annotatie geteld
+<p align="center">
+  <img src="assets/Flowchart_Methode_RA.png" alt="Flowchart Methode" width="600"/>
+</p>
+*Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en Index worden gemapt naar BAM files. De reads van deze files worden samen met de GTF annotatie geteld.*
 
 ## 📊 Resultaten
 
@@ -41,12 +43,16 @@ Bepalen van verschillende Gene Ontologies gaat via `goseq` V1.62.0, `org.Hs.eg.d
 
 -
 <p align="center">
-  <img src="resultaten/Volcanoplot_RA.png" alt="Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht." width="600"/>
+  <img src="resultaten/Volcanoplot_RA.png" alt="Resultaten Volcanoplot" width="600"/>
 </p>
+*Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
 
-alt = “Figuur 3. KEGG pathway van het .. gen.
-![img](resultaten/hsa04662.pathview_RA.png)
 
+
+<p align="center">
+  <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
+</p>
+Figuur 3. KEGG pathway van het ... gen.
 
 ## Conclusie
 
