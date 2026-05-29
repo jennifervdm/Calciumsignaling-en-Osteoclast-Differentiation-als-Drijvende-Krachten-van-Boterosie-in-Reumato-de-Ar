@@ -1,7 +1,7 @@
 #----
 # Mapping
 # Deze data is gemaakt met de paired end sequencing methode (fw en rv)
-setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/Data_RA_raw/")
+setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/")
 getwd()
 # Package voor Bioconductor, voor bio data zoals RNA- en DNA-seq
 install.packages('BiocManager')
@@ -64,7 +64,6 @@ align.SRR4785988 <- align(index = "ref_human",
                           readfile2 = "SRR4785988_2_subset40k.fastq",
                           output_file = "SRR4785988.BAM")
 
-
 # Laad Rsamtools voor sorteren en indexeren (dowloaden indien nodig)
 # Dit is nodig om de data te kunnen zien in een viewer
 BiocManager::install('Rsamtools')
@@ -91,8 +90,9 @@ lapply(samples, function(s) {indexBam(file = paste0(s, '.sorted.bam'))
 #----
 # Count Matrix
 library(Rsubread)
-setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/Data_RA_raw/")
+setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma")
 getwd()
+
 # GTF gen-notaties downloaden
 # Zorg dat GTF uit dezelfde database komt als GCF van eerder, anders kunnen er kleine variaties zijn
 # Vergelijken BAM met GTF in een lijst (meerdere matrixen)
@@ -100,18 +100,19 @@ getwd()
 ??featureCounts
 # Nu gaan we hetzelfde doen met alle samples in 1 lijst
 # Eerst een matrix maken voor alle samples
-all.samples = c('SRR4785819.BAM',
-                'SRR4785820.BAM',
-                'SRR4785828.BAM',
-                'SRR4785831.BAM',
-                'SRR4785979.BAM',
-                'SRR4785980.BAM',
-                'SRR4785986.BAM',
-                'SRR4785988.BAM')
+all.samples = c('Data_RA_raw/BAM/SRR4785819.BAM',
+                'Data_RA_raw/BAM/SRR4785820.BAM',
+                'Data_RA_raw/BAM/SRR4785828.BAM',
+                'Data_RA_raw/BAM/SRR4785831.BAM',
+                'Data_RA_raw/BAM/SRR4785979.BAM',
+                'Data_RA_raw/BAM/SRR4785980.BAM',
+                'Data_RA_raw/BAM/SRR4785986.BAM',
+                'Data_RA_raw/BAM/SRR4785988.BAM')
+
 # Dan de matrix invullen in featureCounts (pairedEnd TRUE/FALSE)
 count_matrix <- featureCounts(
   files = all.samples,
-  annot.ext = "genomic_human.gtf",
+  annot.ext = "Data_RA_raw/genomic_human.gtf",
   isPairedEnd = TRUE,
   isGTFAnnotationFile = TRUE, 
   GTF.featureType = "gene",
@@ -131,7 +132,7 @@ write.csv(counts, "human_countmatrix.csv")
 #----
 # Statistiek en analyse
 # Inladen tekstbestand
-setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/")
+setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/github/data processed/")
 getwd()
 file.exists("count_matrix_RA.txt")
 count_matrix_RA = read.delim("count_matrix_RA.txt")
@@ -166,6 +167,7 @@ treatment_table_RA = data.frame(treatment_RA)
 View(treatment_table_RA)
 # Download de Metadata
 write.csv2(treatment_table_RA, "Metadata_RA.csv")
+
 # Verander de kolomnamen van de .BAM files, zodat het geen .BAM meer heet
 colnames(count_matrix_RA) = c("Control1", 
                               "Control2", 
@@ -197,8 +199,8 @@ dds_RA = DESeqDataSetFromMatrix(countData = count_matrix_RA,
 dds_RA = DESeq(dds_RA)
 # Voer de aanalyse uit voor de Volcano plot
 resultaten_RA = results(dds_RA)
-# Sla de resultaten op
-write.table(resultaten_RA, file = "Resultaten_RA.csv", row.names = TRUE, col.names = TRUE)
+# Download de resultaten
+write.table(resultaten_RA, file = "Differential_Expression_Resultaten_RA.cvs", row.names = TRUE, col.names = TRUE)
 head(resultaten_RA)
 # Bekijk hoeveel genen veranderd zijn
 sum(resultaten_RA$padj < 0.05 & resultaten_RA$log2FoldChange > 1, na.rm = TRUE)
@@ -233,7 +235,6 @@ dev.copy(png, 'Volcanoplot_RA.png',
 dev.off()
 
 
-
 #----
 # Pathway analyse
 # Download clusterProfiler, pathview en KEGGREST
@@ -248,19 +249,50 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install("KEGGREST")
 
 # Inladen packages
-# library(clusterProfiler) evt. visualisatie GO-analyse https://doi.org/10.1089/omi.2011.0118
+library(clusterProfiler)
 library(pathview)
 library(KEGGREST)
+library(org.Hs.eg.db)
+library(AnnotationDbi)
+# clusterProfiler kan evt. visualisatie geven aan GO-analyse https://doi.org/10.1089/omi.2011.0118
 
 # KEGG pathway-analyse, dit kan per gen worden uitgevoerd
-# Voer nu de pathway analyse uit
 # Hierbij worden de KEGG-pathways bekeken en vergeleken met de resultaten
 # Zo wordt duidelijk welke pathways betrokken zijn bij bepaalde genen
 # Op de website kegg.jp kunnen pathways gemapt worden met genen uit de Volcano plot
 # Website: https://www.kegg.jp/kegg-bin/show_organism?menu_type=pathway_maps&org=hsa
-kegg = enrichKEGG(
+
+# Maak de significante dataset van P-waarde <0.05 en log2FoldChange van > 1 & < -1
+sig_genen <- rownames(
+  resultaten_RA[
+    !is.na(resultaten_RA$padj) &
+      resultaten_RA$padj < 0.05 &
+      abs(resultaten_RA$log2FoldChange) > 1,])
+# Check data
+length(sig_genen)
+head(sig_genen)
+
+# Convert SYMBOL naar Entrez
+entrez_ids <- mapIds(
+  org.Hs.eg.db,
+  keys = sig_genen,
+  column = "ENTREZID",
+  keytype = "SYMBOL",
+  multiVals = "first")
+entrez_ids <- unique(na.omit(entrez_ids))
+
+# Voer KEGG uit
+kegg_resultaten_RA <- enrichKEGG(
   gene = entrez_ids,
   organism = "hsa")
+
+# Maak een dataset van deze resultaten
+as.data.frame(kegg_resultaten_RA)
+head(as.data.frame(kegg_resultaten_RA))
+
+# Visualisatie voor de meest voorkomende significante pathways
+dotplot(kegg_results)
+barplot(kegg_results)
 
 # Maak de vector nodig voor de analyse
 pathview_vector <- resultaten_RA$log2FoldChange
