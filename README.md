@@ -34,20 +34,20 @@ Pathway analyses vereisen [`clusterProfiler`](#yu2012) V4.18.4 [`pathview`](#pat
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png" alt="Flowchart Methode" width="600"/>
 </p>
-*Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en Index worden gemapt naar BAM files. De reads van deze files worden samen met de GTF annotatie geteld.*
+**Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en Index worden gemapt naar BAM files. De reads van deze files worden samen met de GTF annotatie geteld.**
 
 ## 📊 Resultaten
 
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png" alt="Resultaten Volcanoplot" width="600"/>
 </p>
-*Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
+**Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.**
 
 
 <p align="center">
   <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
-Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.
+**Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.**
 \
 KEGG: https://www.kegg.jp/entry/hsa:5737
 
@@ -96,6 +96,8 @@ Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026,
 
 <a id="keggrest"></a>KEGGREST. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/KEGGREST/>
 
+<a id="???"></a>KEGG T01001: 5737. (z.d.). Geraadpleegd 29 mei 2026, van <https://www.kegg.jp/entry/hsa:5737>
+
 <a id="liu2021"></a>Liu, S., Wang, Z., Zhu, R., Wang, F., Cheng, Y., & Liu, Y. (2021). Three Differential Expression Analysis Methods for RNA Sequencing: Limma, EdgeR, DESeq2. Journal of Visualized Experiments: JoVE, (175). <https://doi.org/10.3791/62528>
 
 <a id="monzó2025"></a> Monzó, C., Liu, T., & Conesa, A. (2025). Transcriptomics in the era of long-read sequencing. Nature Reviews. Genetics, 26(10), 681-701. <https://doi.org/10.1038/s41576-025-00828-z>
@@ -113,7 +115,9 @@ Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026,
 <a id="yu2012"></a> Yu, G., Wang, L.-G., Han, Y., & He, Q.-Y. (2012). clusterProfiler: An R package for comparing biological themes among gene clusters. Omics: A Journal of Integrative Biology, 16(5), 284-287. <https://doi.org/10.1089/omi.2011.0118>
 
 
+<a id="???"></a>
 
+<a id="???"></a>
 
 <a id="???"></a>
 
