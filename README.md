@@ -9,6 +9,13 @@
 - `resultaten` - Figuren zoals grafieken en tabellen.
 - `README.md` - Het document om de tekst hier te genereren.
 
+
+XXXXXXXXX
+zou je in het Nederlands een ~200 woorden resultaten kopje kunnen schrijven van mijn data? Ik heb gekozen voor de GO: 0.005981202 0.9967119 42 105 osteoclast differentiation, pathway van het gen ....
+
+
+
+
 ---
 
 ## Inleiding
@@ -39,6 +46,7 @@ Pathway analyses vereisen `clusterProfiler` V4.18.4 `pathview` V1.50.0, `KEGGRES
 ## 📊 Resultaten
 
 
+
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png" alt="Resultaten Volcanoplot" width="600"/>
 </p>
@@ -49,8 +57,14 @@ Pathway analyses vereisen `clusterProfiler` V4.18.4 `pathview` V1.50.0, `KEGGRES
 <p align="center">
   <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
-Figuur 3. KEGG pathway van het ... gen.
+Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.
 \
+KEGG: https://www.kegg.jp/entry/hsa:5737
+
+
+
+
+
 
 
 Bij het inlezen van de GO-analyse was de meest significante data gerelateerd aan de T-cel. Dit was te verwachten wegens een grote focus op dit gebied binnen onderzoek. Echter waren relatief weinig ontologieën ongerelateerd aan immuuncellen en waren sommige ontologieën.
