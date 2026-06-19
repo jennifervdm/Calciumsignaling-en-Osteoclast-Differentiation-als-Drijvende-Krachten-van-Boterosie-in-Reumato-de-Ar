@@ -4,7 +4,7 @@
 - `bronnen` - Gebruikte bronnen en AI gebruik.
 - `data processed` – Bewerkte data voor helder overzicht van resultaten en uitvoeren van analyses. 
 - `data raw` – Ruwe data afkomstig van 8 individuen, waarvan 4 RA hebben, en 4 gezond zijn.  
-- `data_stewardship` - Aantoning van de competentie Beheren niveau I 
+- `data_stewardship` - Aantoning van de competentie Beheren niveau I.
 - `scripts` – Scripts waarin de data geanalyseerd wordt.
 - `resultaten` - Figuren zoals grafieken en tabellen.
 - `README.md` - Het document om de tekst hier te genereren.
@@ -39,25 +39,21 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 ## 📊 Resultaten
 
 <p align="center">
-  <img src="resultaten/Volcanoplot_RA.png" alt="Resultaten Volcanoplot" width="600"/>
+  <img src="resultaten_/Volcanoplot_RA.png" alt="Resultaten Volcanoplot" width="600"/>
 </p>
 **Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.**
 
 
 <p align="center">
-  <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
+  <img src="resultaten_/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
 **Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.**
 \
-KEGG: https://www.kegg.jp/entry/hsa:5737
+KEGG: <https://www.kegg.jp/entry/hsa:5737>
 
 
 
 
-
-
-
-Bij het inlezen van de GO-analyse was de meest significante data gerelateerd aan de T-cel. Dit was te verwachten wegens een grote focus op dit gebied binnen onderzoek. Echter waren relatief weinig ontologieën ongerelateerd aan immuuncellen en waren sommige ontologieën.
 
 [Gene Ontology](<https://amigo.geneontology.org/amigo/term/GO:0030316>)
 
@@ -74,8 +70,6 @@ Bij het inlezen van de GO-analyse was de meest significante data gerelateerd aan
 
 
 ## Bronnen
-**NOG NIET OP VOLGORDE**
-
 <a id="annoDbi"></a>AnnotationDbi. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/AnnotationDbi/>
 
 <a id="Bioc"></a>Bioconductor—Install. (z.d.). Geraadpleegd 29 mei 2026, van <https://bioconductor.org/install/>
@@ -108,7 +102,7 @@ Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026,
 
 <a id="pathview"></a>Pathview. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/pathview/>
 
-<a id="Rsubread"></a>Rsubread. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http:<//bioconductor.org/packages/Rsubread/>
+<a id="Rsubread"></a>Rsubread. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/Rsubread/>
 
 <a id="vzinfo2026"></a> Reumatoïde artritis (RA) | Leeftijd en geslacht | Volksgezondheid en Zorg. (z.d.). VZinfo. Geraadpleegd 26 mei 2026, van <https://www.vzinfo.nl/reumatoide-artritis-ra/leeftijd-en-geslacht>
 
