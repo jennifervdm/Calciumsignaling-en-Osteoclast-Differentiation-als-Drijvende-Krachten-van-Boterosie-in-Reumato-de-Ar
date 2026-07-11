@@ -15,6 +15,18 @@
 
 Reumatoïde artritis (RA) is een veelvoorkomende autoimmuunziekte. In 2024 waren er zo’n 200.000 Nederlanders met deze aandoening [(Reumatoïde artritis (RA) | Leeftijd en geslacht | Volksgezondheid en Zorg, z.d.)](<https://www.vzinfo.nl/reumatoide-artritis-ra/leeftijd-en-geslacht>). RA wordt gekenmerkt door synoviale hyperplasie met pannusvorming [(Chetina & Markova, 2019)](<https://doi.org/10.1134/S1990750819010049>). Synovium, een type slijmvlies raakt ontstoken, wat lijdt tot de erosie van bot- en kraakbeenweefsel wegens overname van pannusweefsel [(Gravallese & Monach, 2015)](<https://doi.org/10.1016/B978-0-323-09138-1.00094-2>). Momenteel focust onderzoek zich op de genen die met T-cellen te maken hebben. [(Padyukov, 2022)](<https://doi.org/10.1007/s00281-022-00912-0>). Er zijn al kleine klinische studies bezig met een mogelijk geneesmiddel, CAR T-celtherapie, wat veelbelovende behandelingsresultaten bied voor diverse autoimmuunziekten, waaronder RA [(Freeley, 2025)](<https://doi.org/10.1007/s12016-025-09113-7>). 
 
+*Tabel 1. Patiënten uit onderzochte dataset, afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42).*
+|     ID      | Age |   Sex   |               Status                |
+| ----------- | --- | ------- | ----------------------------------- |
+| SRR4785819  | 31  | female  |               Normal                |
+| SRR4785820  | 15  | female  |               Normal                |
+| SRR4785828  | 31  | female  |               Normal                |
+| SRR4785831  | 42  | female  |               Normal                |
+| SRR4785979  | 54  | female  | Rheumatoid arthritis (established)  |
+| SRR4785980  | 55  | female  | Rheumatoid arthritis (established)  |
+| SRR4785986  | 60  | female  | Rheumatoid arthritis (established)  |
+| SRR4785988  | 59  | female  | Rheumatoid arthritis (established)  |
+
 Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoek. Het transcriptoom, wat hierbij onderzocht wordt, geeft informatie over hoeveelheid expressie in alle genen. Met analyses van de functies van genen met hoge expressie, kan een beeld worden geschetst van de basale processen die plaatsvinden bij zieke individuen, in vergelijking met gezonde personen [(Monzó et al., 2025)](<https://doi.org/10.1038/s41576-025-00828-z>).
 
 In dit onderzoek is ingedoken op de processen betrokken bij RA, door transcriptiefactoren te onderzoeken aan de hand van een VolcanoPlot, GO-analyse en KEGG-pathway analyse. De nadruk is gelegd op genen en gene ontologies waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van alle processen en pathways die betrokken zijn bij RA.
@@ -29,19 +41,6 @@ Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de [`Bio
 Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconductor.org/packages/goseq/>) V1.62.0, [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>). Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt. De ontologie [osteoclast differentiation](<https://amigo.geneontology.org/amigo/term/GO:0030316>) is onderzocht.
 
 Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.0118>) V4.18.4 [`pathview`](<http://bioconductor.org/packages/pathview/>) V1.50.0, [`KEGGREST`](<http://bioconductor.org/packages/KEGGREST/>) V1.50.0  [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) V3.22.0 en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>) V1.72.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
-
-*Tabel 1. Patiënten uit onderzochte dataset, afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42).*
-|     ID      | Age |   Sex   |               Status                |
-| ----------- | --- | ------- | ----------------------------------- |
-| SRR4785819  | 31  | female  |               Normal                |
-| SRR4785820  | 15  | female  |               Normal                |
-| SRR4785828  | 31  | female  |               Normal                |
-| SRR4785831  | 42  | female  |               Normal                |
-| SRR4785979  | 54  | female  | Rheumatoid arthritis (established)  |
-| SRR4785980  | 55  | female  | Rheumatoid arthritis (established)  |
-| SRR4785986  | 60  | female  | Rheumatoid arthritis (established)  |
-| SRR4785988  | 59  | female  | Rheumatoid arthritis (established)  |
-
 
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png "alt="Flowchart Methode" width="600"/>
