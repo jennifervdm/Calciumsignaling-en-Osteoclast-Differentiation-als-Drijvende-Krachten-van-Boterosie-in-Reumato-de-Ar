@@ -15,6 +15,13 @@
 
 Reumatoïde artritis (RA) is een veelvoorkomende autoimmuunziekte. In 2024 waren er zo’n 200.000 Nederlanders met deze aandoening [(Reumatoïde artritis (RA) | Leeftijd en geslacht | Volksgezondheid en Zorg, z.d.)](<https://www.vzinfo.nl/reumatoide-artritis-ra/leeftijd-en-geslacht>). RA wordt gekenmerkt door synoviale hyperplasie met pannusvorming [(Chetina & Markova, 2019)](<https://doi.org/10.1134/S1990750819010049>). Synovium, een type slijmvlies raakt ontstoken, wat lijdt tot de erosie van bot- en kraakbeenweefsel wegens overname van pannusweefsel [(Gravallese & Monach, 2015)](<https://doi.org/10.1016/B978-0-323-09138-1.00094-2>). Momenteel focust onderzoek zich op de genen die met T-cellen te maken hebben. [(Padyukov, 2022)](<https://doi.org/10.1007/s00281-022-00912-0>). Er zijn al kleine klinische studies bezig met een mogelijk geneesmiddel, CAR T-celtherapie, wat veelbelovende behandelingsresultaten bied voor diverse autoimmuunziekten, waaronder RA [(Freeley, 2025)](<https://doi.org/10.1007/s12016-025-09113-7>). 
 
+Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoek. Het transcriptoom, wat hierbij onderzocht wordt, geeft informatie over hoeveelheid expressie in alle genen. Met analyses van de functies van genen met hoge expressie, kan een beeld worden geschetst van de basale processen die plaatsvinden bij zieke individuen, in vergelijking met gezonde personen [(Monzó et al., 2025)](<https://doi.org/10.1038/s41576-025-00828-z>).
+
+In dit onderzoek is ingedoken op de processen betrokken bij RA, door transcriptiefactoren te onderzoeken aan de hand van een VolcanoPlot, GO-analyse en KEGG-pathway analyse. De nadruk is gelegd op genen en gene ontologies waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van alle processen en pathways die betrokken zijn bij RA.
+## Methoden
+
+Er is ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](assets/Flowchart_Methode_RA.png). De dataset is afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>) (zie tabel 1), en is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomics_RA.R).
+
 *Tabel 1. Patiënten uit onderzochte dataset, afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42).*
 |     ID      | Age |   Sex   |               Status                |
 | ----------- | --- | ------- | ----------------------------------- |
@@ -26,13 +33,6 @@ Reumatoïde artritis (RA) is een veelvoorkomende autoimmuunziekte. In 2024 waren
 | SRR4785980  | 55  | female  | Rheumatoid arthritis (established)  |
 | SRR4785986  | 60  | female  | Rheumatoid arthritis (established)  |
 | SRR4785988  | 59  | female  | Rheumatoid arthritis (established)  |
-
-Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoek. Het transcriptoom, wat hierbij onderzocht wordt, geeft informatie over hoeveelheid expressie in alle genen. Met analyses van de functies van genen met hoge expressie, kan een beeld worden geschetst van de basale processen die plaatsvinden bij zieke individuen, in vergelijking met gezonde personen [(Monzó et al., 2025)](<https://doi.org/10.1038/s41576-025-00828-z>).
-
-In dit onderzoek is ingedoken op de processen betrokken bij RA, door transcriptiefactoren te onderzoeken aan de hand van een VolcanoPlot, GO-analyse en KEGG-pathway analyse. De nadruk is gelegd op genen en gene ontologies waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van alle processen en pathways die betrokken zijn bij RA.
-## Methoden
-
-Er is ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](assets/Flowchart_Methode_RA.png). De dataset is afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>) (zie tabel 1), en is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomics_RA.R).
 
 Bij data mapping wordt een index gebouwd met [`BiocManager`](<https://bioconductor.org/install/>) V1.30.27/V3.22 package [`Rsubread`](<https://bioconductor.org/packages/Rsubread/>) V2.24.0. Hierin worden FASTA bestanden van het RefSeq referentiegenoom [GRCh38.p14](<https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>) afkomstig van de NCBI genome database gemaakt. Het alignen tot BAM bestanden is in paired-end. [`Rsamtools`](<https://bioconductor.org/packages//release/bioc/html/Rsamtools.html>) V2.26.0 sorteert en indexeert de BAM files. De Count Matrix en BAM files matrix wordt gemaakt aan de hand van een GTF annotatiebestand, nogmaals het NCBI GRCh38.p14 genoom.
 
