@@ -31,7 +31,6 @@ Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconducto
 Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.0118>) V4.18.4 [`pathview`](<http://bioconductor.org/packages/pathview/>) V1.50.0, [`KEGGREST`](<http://bioconductor.org/packages/KEGGREST/>) V1.50.0  [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) V3.22.0 en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>) V1.72.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
 
 **Tabel 1. Patiënten uit onderzochte dataset, afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42).**
-._____________._____._________._____________________________________.
 |     ID      | Age |   Sex   |               Status                |
 | ----------- | --- | ------- | ----------------------------------- |
 | SRR4785819  | 31  | female  |               Normal                |
@@ -42,7 +41,8 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 | SRR4785980  | 55  | female  | Rheumatoid arthritis (established)  |
 | SRR4785986  | 60  | female  | Rheumatoid arthritis (established)  |
 | SRR4785988  | 59  | female  | Rheumatoid arthritis (established)  |
-|_____________|_____|_________|_____________________________________|
+
+
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png "alt="Flowchart Methode" width="600"/>
 </p>
