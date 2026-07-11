@@ -46,6 +46,7 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png "alt="Flowchart Methode" width="600"/>
 </p>
+
 *Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en Index worden gemapt naar BAM files. De reads van deze files worden samen met de GTF annotatie geteld.*
 
 ## 📊 Resultaten
@@ -53,12 +54,14 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 <p align="center">
   <img src="resultaten_/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
 </p>
+
 *Figuur 2. Volcano plot van de verschillen in gesequencete genen van gezonde individuen (n=4) tegenover RA patienten (n=4). Genen n=29407, p-waarde is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
 
 
 <p align="center">
   <img src="resultaten_/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
+
 *Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.*
 \
 [KEGG](<https://www.kegg.jp/entry/hsa:5737>)
