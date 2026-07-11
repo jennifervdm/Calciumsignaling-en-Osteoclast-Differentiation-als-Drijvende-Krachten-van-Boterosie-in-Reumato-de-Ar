@@ -26,7 +26,7 @@ Bij data mapping wordt een index gebouwd met [`BiocManager`](<https://bioconduct
 
 Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de [`BiocManager`](<https://bioconductor.org/install/>) packages [`DESeq2`](<https://doi.org/10.3791/62528>) V1.50.2 en [`EnhancedVolcano`](<http://bioconductor.org/packages/EnhancedVolcano/>) V1.28.2 nodig. Een differentiële analyse wordt over de data uitgevoerd. De VolcanoPlot bevat de log2FoldChange en gecorrigeerde P-waarde <0.05.
 
-Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconductor.org/packages/goseq/>) V1.62.0, [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>). Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt. De ontologie [osteoclast differentiation] (<https://amigo.geneontology.org/amigo/term/GO:0030316>)is onderzocht.
+Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconductor.org/packages/goseq/>) V1.62.0, [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>). Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt. De ontologie [osteoclast differentiation](<https://amigo.geneontology.org/amigo/term/GO:0030316>) is onderzocht.
 
 Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.0118>) V4.18.4 [`pathview`](<http://bioconductor.org/packages/pathview/>) V1.50.0, [`KEGGREST`](<http://bioconductor.org/packages/KEGGREST/>) V1.50.0  [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) V3.22.0 en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>) V1.72.0. Een enriched KEGG stelt het juiste organisme vast en de pathview wordt uitgevoerd op het gen van interesse met een log2FoldChange vector.
 
@@ -85,6 +85,8 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 
 
 ## Bronnen
+AmiGo2 Osteoclast Differentiation. (z.d.). Geraadpleegd 11 juli 2026, van <https://amigo.geneontology.org/amigo/term/GO:0030316>
+
 AnnotationDbi. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/AnnotationDbi/>
 
 Bioconductor—Install. (z.d.). Geraadpleegd 29 mei 2026, van <https://bioconductor.org/install/>
