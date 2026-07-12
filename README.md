@@ -53,14 +53,20 @@ zie figuur 2.
 ## 📊 Resultaten
 ### Volcano Plot
 
-
-
+Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te zien (figuur 2). Van de 29407 genen waren 4572 significant aan de hand van een P-waarde <0.05 en een log₂ fold change van > 1 en < -1. De meeste tot expressie gebrachte genen waren gerelateerd aan het immuunsysteem, voornamelijk B-cellen, T-cellen en macrofagen. Er is een willekeurig gen gekozen ongerelateerd aan T-cellen. Het gen PTGFR (prostaglandin F-receptor) suggereert dat prostaglandine-gemedieerde signaaltranductie betrekking heeft bij de inflammatiore processen van RA.  De log₂ fold change van dit gen was 3.59142 en een p-waarde van 5.7e-23 (zie tabel 2).
 
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
 </p>
 
 *Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA patienten (n=4). Genen n=29407, de p-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
+
+*Tabel 2. Resultaten van de differentiële analyse van het gen PTGFR. *
+|       | baseMean | log2FoldChange |   lfcSE   |  stat   |   pvalue    |     padj    |
+|       | -------- | -------------- | --------- | ------- | ----------- | ----------- |
+| PTGFR | 1219.636 |    3.59142     |  0.363946 | 9.86798 | 5.73068e-23 | 7.61760e-20 |
+
+
 
 ### KEGG Pathway Analyse
 
@@ -99,15 +105,19 @@ AnnotationDbi. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioco
 
 Bioconductor—Install. (z.d.). Geraadpleegd 29 mei 2026, van <https://bioconductor.org/install/>
 
-Boyle, W. J., Simonet, W. S., & Lacey, D. L. (2003). Osteoclast differentiation and activation. Nature, 423(6937), 337-342. <https://doi.org/10.1038/nature01658>*
+Boyle, W. J., Simonet, W. S., & Lacey, D. L. (2003). Osteoclast differentiation and activation. Nature, 423(6937), 337-342. <https://doi.org/10.1038/nature01658>****
 
 Chetina, E. V., & Markova, G. A. (2019). Prospects for the Use of Gene Expression Analysis in Rheumatology. Biochemistry (Moscow), Supplement Series B: Biomedical Chemistry, 13(1), 13-25. <https://doi.org/10.1134/S1990750819010049>
 
 EnhancedVolcano. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/EnhancedVolcano/>
 
+Filgueira, L. (2010). Chapter 5—Osteoclast Differentiation and Function. In D. Heymann (Red.), Bone Cancer (pp. 59-66). Academic Press. <https://doi.org/10.1016/B978-0-12-374895-9.00005-0>***
+
 Freeley, M. (2025). CAR T Cell Therapy for Rheumatoid Arthritis. Clinical Reviews in Allergy & Immunology, 68(1), 100. <https://doi.org/10.1007/s12016-025-09113-7>
 
 Goseq. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/goseq/>
+
+Gravallese, E. M., Manning, C., Tsay, A., Naito, A., Pan, C., Amento, E., & Goldring, S. R. (2000). Synovial tissue in rheumatoid arthritis is a source of osteoclast differentiation factor. Arthritis & Rheumatism, 43(2), 250-258. <https://doi.org/10.1002/1529-0131(200002)43:2%3C250::AID-ANR3%3E3.0.CO;2-P>***
 
 Gravallese, E. M., & Monach, P. A. (2015). The rheumatoid joint: Synovitis and tissue destruction. In Rheumatology (pp. 768-784). Mosby. <https://doi.org/10.1016/B978-0-323-09138-1.00094-2>
 
