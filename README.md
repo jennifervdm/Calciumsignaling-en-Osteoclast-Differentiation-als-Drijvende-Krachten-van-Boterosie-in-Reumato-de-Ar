@@ -41,7 +41,7 @@ Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de [`Bio
 
 Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconductor.org/packages/goseq/>) V1.62.0, [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>). Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt. De ontologie [osteoclast differentiation](<https://amigo.geneontology.org/amigo/term/GO:0030316>) is onderzocht.
 
-Pathway analyses vereisen clusterProfiler V4.18.4 pathview V1.50.0, KEGGREST V1.50.0  org.Hs.eg.db V3.22.0 en AnnotationDbi V1.72.0. Enriched KEGG-analyses weergeven genen die meer of minder voorkomen in bepaalde pathways, en de pathview weergeeft een pathway-figuur, uitgevoerd op een gen van interesse (PTGFR) met een log2FoldChange vector.
+Pathway analyses vereisen clusterProfiler V4.18.4 pathview V1.50.0, KEGGREST V1.50.0  org.Hs.eg.db V3.22.0 en AnnotationDbi V1.72.0. Enriched KEGG-analyses weergeven genen die meer of minder voorkomen in bepaalde pathways, en de pathview weergeeft een pathway-figuur, uitgevoerd op een gen van interesse met een log2FoldChange vector.
 
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png "alt="Flowchart Methode" width="600"/>
@@ -53,49 +53,42 @@ zie figuur 2.
 
 ## 📊 Resultaten
 
-In de transcriptoomanalyse was de differentiële genexpressie tussen de condities van RA (n=4) en controle (n=4) onderzocht. Een Volcano plot is gemaakt om alle significante genen met differentiële expressie te weergeven. Een GO-analyse is uitgevoerd om significante biologische processen te weergeven. De KEGG pathway analyse toont alle betrokken pathways bij handmatig geselecteerde genen.
-
+In de transcriptoomanalyse was de differentiële genexpressie tussen de condities van RA (n=4) en controle (n=4) onderzocht. Een Volcano plot is gemaakt om alle significante genen met differentiële expressie te weergeven. Een GO-analyse was uitgevoerd om significante biologische processen te weergeven. De KEGG pathway analyse toont alle betrokken pathways bij handmatig geselecteerde genen.
 ### Volcano Plot
 
-Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te zien (figuur 2). Van de 29407 genen waren 4572 significant aan de hand van een P-waarde <0.05 en een log₂ fold change van > 1 en < -1. De meeste tot expressie gebrachte genen waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een willekeurig gen gekozen ongerelateerd aan T-cellen. Het gen [PTGFR](<https://www.kegg.jp/entry/hsa:5737>) (prostaglandin F-receptor) suggereert dat prostaglandine-gemedieerde signaaltranductie betrekking heeft bij de inflammatiore processen van RA. De log₂ fold change van dit gen was 3.59142 en een gecorrigeerde P-waarde van 7.61760e-20 (tabel 2).
-
+Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te zien (figuur 2). Van de 29407 genen waren 4572 significant aan de hand van een P-waarde <0.05 en een log₂ fold change van > 1 en < -1. De meeste tot expressie gebrachte genen waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een gen gekozen wat mogelijk in verband staat met boterosie. Het gen [CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) (Ca2+/calmodulin-dependent protein kinase) is onderzocht wegens betrekking tot calcium. De log₂ fold change van dit gen was opgereguleerd tot 3.31 met een gecorrigeerde P-waarde van 3.47e-05 (tabel 2).
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
 </p>
 
 *Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA-patienten (n=4). Genen n=29407, de P-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
 
-*Tabel 2. Resultaten van de differentiële analyse van het gen PTGFR.*
+*Tabel 2. Resultaten van de differentiële analyse van het gen CAMK4.*
 |       | baseMean | log2FoldChange |   lfcSE   |  stat   |   pvalue    |     padj    |
 | ----- | -------- | -------------- | --------- | ------- | ----------- | ----------- |
-| PTGFR | 1219.636 |    3.59142     |  0.363946 | 9.86798 | 5.73068e-23 | 7.61760e-20 |
+| CAMK4 | 236.8115 |    3.30909     |  0.689901 | 4.79647 | 1.61485e-06 | 3.46967e-05 |
 
 ### Gene Ontology Analyse
-[Gene Ontology](<https://amigo.geneontology.org/amigo/term/GO:0030316>)
 
-
+De Gene Ontology (GO)-analyse weergaf significante biologische processen die vaak terugkwamen bij RA-patiënten. De analyse toonde een significante verrijking van het proces [osteoclast differentiation](<https://amigo.geneontology.org/amigo/term/GO:0030316>) (GO:0031594; p = 0.005981202). Hierbij waren 42 van de 105 pathways-gerelateerde genen differentieel tot expressie gekomen. Een aantal genen die betrokken zijn bij dit proces zijn efna2a, tnfrsf11a en csf1rb. Deze genen zijn echter niet significant binnen de Volcano Plot, en hierdoor niet relevant.
 
 ### KEGG Pathway Analyse
 
-[KEGG](<https://www.kegg.jp/entry/hsa:5737>)
-
-
-
+Het gen [CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) is verder onderzocht met een KEGG-pathway analyse. Dit gen is onder anderen betrokken bij calcium signaling, cAMP signaling en osteoclast differentiation. Bij calcium signalering zijn ook een hoop andere betrokken genen te zien. Veel zijn ........
 
 <p align="center">
   <img src="resultaten/hsa04020_pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
 
-*Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.*
+*Figuur 3. KEGG-pathway analyse van de calcium signaling pathway. Opgereguleerde genen zijn rood en neergereguleerde genen zijn groen.*
 
 ## Conclusie
 
--
+De focus in het RA onderzoeksveld ligt momenteel op CAR T-cel therapie testen voor behandelingen. Tot een grootschalig onderzoek uitgevoerd is, blijft het verstandig om onderzoek te investeren in alternatieve medicijnen. Daarom is in dit onderzoek de focus gelegd op genen gerelateerd aan boterosie, een van de meest destructieve RA symptomen.
 
--
+Met de Volcano Plot, KEGG-analyse en pathway analyse kan een relatie aangetoond worden met het functioneren van cellulaire processen van botten, zoals de calcium signalering en osteoclast differentiation. Binnen deze drie analyses is het gen CAMK4 gevonden als significant. De significante opgereguleerde expressie, samen met een rol in de calcium signalering pathway en osteoclast differentiation suggereert dat het CAMK4 gen invloed heeft op boterosie binnen RA. Echter kan dit ook verklaard worden wegens betrekking met cAMP signalering wat een veelvoorkomend proces is.
 
--
-
+Uiteraard moet in uitvoeren van vervolgonderzoek verder verdiept worden in het CAMK4 gen zoals relevantie vinden met andere pathways. Ook uitspitten van genen zoals SNX10 die gerelateerd zijn aan osteoclast differentiatie wordt geadviseerd. Toenemende kennis over boterosie kan een keerpunt vormen voor begrip van achterliggende processen van RA.
 
 ## Bronnen
 AmiGo2 Osteoclast Differentiation. (z.d.). Geraadpleegd 11 juli 2026, van <https://amigo.geneontology.org/amigo/term/GO:0030316>
@@ -103,8 +96,6 @@ AmiGo2 Osteoclast Differentiation. (z.d.). Geraadpleegd 11 juli 2026, van <https
 AnnotationDbi. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/AnnotationDbi/>
 
 Bioconductor—Install. (z.d.). Geraadpleegd 29 mei 2026, van <https://bioconductor.org/install/>
-
-Boyle, W. J., Simonet, W. S., & Lacey, D. L. (2003). Osteoclast differentiation and activation. Nature, 423(6937), 337-342. <https://doi.org/10.1038/nature01658>****
 
 Chetina, E. V., & Markova, G. A. (2019). Prospects for the Use of Gene Expression Analysis in Rheumatology. Biochemistry (Moscow), Supplement Series B: Biomedical Chemistry, 13(1), 13-25. <https://doi.org/10.1134/S1990750819010049>
 
@@ -116,15 +107,13 @@ Freeley, M. (2025). CAR T Cell Therapy for Rheumatoid Arthritis. Clinical Review
 
 Goseq. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/goseq/>
 
-Gravallese, E. M., Manning, C., Tsay, A., Naito, A., Pan, C., Amento, E., & Goldring, S. R. (2000). Synovial tissue in rheumatoid arthritis is a source of osteoclast differentiation factor. Arthritis & Rheumatism, 43(2), 250-258. <https://doi.org/10.1002/1529-0131(200002)43:2%3C250::AID-ANR3%3E3.0.CO;2-P>***
-
 Gravallese, E. M., & Monach, P. A. (2015). The rheumatoid joint: Synovitis and tissue destruction. In Rheumatology (pp. 768-784). Mosby. <https://doi.org/10.1016/B978-0-323-09138-1.00094-2>
 
 Homo sapiens genome assembly GRCh38.p14. (z.d.). NCBI. Geraadpleegd 28 mei 2026, van <https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>
 
 KEGGREST. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/KEGGREST/>
 
-KEGG T01001: 5737. (z.d.). Geraadpleegd 29 mei 2026, van <https://www.kegg.jp/entry/hsa:5737> **********
+KEGG T01001: CAMK4. (z.d.). Geraadpleegd 13 juli 2026, van <https://www.kegg.jp/entry/hsa:CAMK4>
 
 Liu, S., Wang, Z., Zhu, R., Wang, F., Cheng, Y., & Liu, Y. (2021). Three Differential Expression Analysis Methods for RNA Sequencing: Limma, EdgeR, DESeq2. Journal of Visualized Experiments: JoVE, (175). <https://doi.org/10.3791/62528>
 
