@@ -303,7 +303,7 @@ capture.output(for(go in GO_overrep_p05_vector[1:1517]) { print(GOTERM[[go]])
 
 
 #----
-# Pathway analyse
+# KEGG Pathway analyse
 # Download clusterProfiler, pathview en KEGGREST
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
