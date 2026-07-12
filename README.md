@@ -40,7 +40,7 @@ Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de [`Bio
 
 Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconductor.org/packages/goseq/>) V1.62.0, [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>). Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt. De ontologie [osteoclast differentiation](<https://amigo.geneontology.org/amigo/term/GO:0030316>) is onderzocht.
 
-Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.0118>) V4.18.4 [`pathview`](<http://bioconductor.org/packages/pathview/>) V1.50.0, [`KEGGREST`](<http://bioconductor.org/packages/KEGGREST/>) V1.50.0  [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) V3.22.0 en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>) V1.72.0. Enriched KEGG-analyses weergeven genen die meer of minder voorkomen in bepaalde pathways, en de pathview wordt uitgevoerd op een gen van interesse met een log2FoldChange vector. Het gen van interesse PTGFR.
+Pathway analyses vereisen clusterProfiler V4.18.4 pathview V1.50.0, KEGGREST V1.50.0  org.Hs.eg.db V3.22.0 en AnnotationDbi V1.72.0. Enriched KEGG-analyses weergeven genen die meer of minder voorkomen in bepaalde pathways, en de pathview weergeeft een pathway-figuur, uitgevoerd op een gen van interesse (PTGFR) met een log2FoldChange vector.
 
 <p align="center">
   <img src="assets/Flowchart_Methode_RA.png "alt="Flowchart Methode" width="600"/>
@@ -51,14 +51,23 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 zie figuur 2.
 
 ## 📊 Resultaten
-### Volcano plot
+### Volcano Plot
+
+
+
+
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
 </p>
 
 *Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA patienten (n=4). Genen n=29407, de p-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
 
-### KEGG pathway analyse
+### KEGG Pathway Analyse
+
+[KEGG](<https://www.kegg.jp/entry/hsa:5737>)
+
+
+
 
 <p align="center">
   <img src="resultaten/hsa04020_pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
@@ -66,10 +75,8 @@ zie figuur 2.
 
 *Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.*
 
-[KEGG](<https://www.kegg.jp/entry/hsa:5737>)
+### Gene Ontology Analyse
 
-
-### Gene ontology analyse
 
 [Gene Ontology](<https://amigo.geneontology.org/amigo/term/GO:0030316>)
 
