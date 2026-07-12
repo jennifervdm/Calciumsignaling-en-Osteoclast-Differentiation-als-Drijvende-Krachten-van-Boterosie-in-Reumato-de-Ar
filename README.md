@@ -61,7 +61,7 @@ Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te 
 
 *Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA patienten (n=4). Genen n=29407, de p-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
 
-*Tabel 2. Resultaten van de differentiële analyse van het gen PTGFR. *
+*Tabel 2. Resultaten van de differentiële analyse van het gen PTGFR.*
 |       | baseMean | log2FoldChange |   lfcSE   |  stat   |   pvalue    |     padj    |
 | ----- | -------- | -------------- | --------- | ------- | ----------- | ----------- |
 | PTGFR | 1219.636 |    3.59142     |  0.363946 | 9.86798 | 5.73068e-23 | 7.61760e-20 |
