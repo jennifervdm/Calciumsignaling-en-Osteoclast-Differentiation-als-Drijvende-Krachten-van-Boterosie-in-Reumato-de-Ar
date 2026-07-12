@@ -86,6 +86,8 @@ lapply(samples, function(s) {sortBam(file = paste0(s, '.BAM'), destination = pas
 lapply(samples, function(s) {indexBam(file = paste0(s, '.sorted.bam'))
 })
 
+
+
 #----
 # Count Matrix
 library(Rsubread)
@@ -127,6 +129,8 @@ counts = count_matrix$counts
 head(counts)
 write.csv(counts, "human_countmatrix.csv")
 # In dit geval wordt de volledige versie gestuurd door een docent
+
+
 
 #----
 # Statistiek en analyse
