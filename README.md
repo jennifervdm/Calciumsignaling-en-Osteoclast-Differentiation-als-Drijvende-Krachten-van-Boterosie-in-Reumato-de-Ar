@@ -59,7 +59,7 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 ### KEGG pathway analyse
 
 <p align="center">
-  <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
+  <img src="resultaten/hsa04020_pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
 
 *Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.*
