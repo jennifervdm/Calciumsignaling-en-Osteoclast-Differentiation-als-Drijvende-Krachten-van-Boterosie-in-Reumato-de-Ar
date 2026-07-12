@@ -17,7 +17,8 @@ Reumatoïde artritis (RA) is een veelvoorkomende autoimmuunziekte. In 2024 waren
 
 Transcriptomics is een veelgebruikte studie binnen genetisch en medisch onderzoek. Het transcriptoom, wat hierbij onderzocht wordt, geeft informatie over hoeveelheid expressie in alle genen. Met analyses van de functies van genen met hoge expressie, kan een beeld worden geschetst van de basale processen die plaatsvinden bij zieke individuen, in vergelijking met gezonde personen [(Monzó et al., 2025)](<https://doi.org/10.1038/s41576-025-00828-z>).
 
-In dit onderzoek is ingedoken op de processen betrokken bij RA, door transcriptiefactoren te onderzoeken aan de hand van een VolcanoPlot, GO-analyse en KEGG-pathway analyse. De nadruk is gelegd op genen en gene ontologies waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van alle processen en pathways die betrokken zijn bij RA.
+In dit onderzoek is ingedoken op de processen betrokken bij RA, door transcriptiefactoren te onderzoeken aan de hand van een VolcanoPlot, GO-analyse en KEGG-pathway analyse. De nadruk is gelegd op genen en gene ontologies waar minder onderzoek naar gedaan is om een dieper begrip te krijgen van diverse processen en pathways die betrokken zijn bij RA, in dit geval is focus gelegd op boterosie, één van de destructievere symptomen.
+
 ## Methoden
 
 Er is ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](assets/Flowchart_Methode_RA.png). De dataset is afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>) (zie tabel 1), en is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomics_RA.R).
@@ -36,7 +37,7 @@ Er is ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoe
 
 Bij data mapping wordt een index gebouwd met [`BiocManager`](<https://bioconductor.org/install/>) V1.30.27/V3.22 package [`Rsubread`](<https://bioconductor.org/packages/Rsubread/>) V2.24.0. Hierin worden FASTA bestanden van het RefSeq referentiegenoom [GRCh38.p14](<https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_000001405.40/>) afkomstig van de NCBI genome database gemaakt. Het alignen tot BAM bestanden is in paired-end. [`Rsamtools`](<https://bioconductor.org/packages//release/bioc/html/Rsamtools.html>) V2.26.0 sorteert en indexeert de BAM files. De Count Matrix en BAM files matrix wordt gemaakt aan de hand van een GTF annotatiebestand, nogmaals het NCBI GRCh38.p14 genoom.
 
-Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de [`BiocManager`](<https://bioconductor.org/install/>) packages [`DESeq2`](<https://doi.org/10.3791/62528>) V1.50.2 en [`EnhancedVolcano`](<http://bioconductor.org/packages/EnhancedVolcano/>) V1.28.2 nodig. Een differentiële analyse wordt over de data uitgevoerd. De VolcanoPlot bevat de log2FoldChange en gecorrigeerde P-waarde <0.05.
+Een VolcanoPlot wordt gemaakt voor genexpressie bepaling. Hiervoor zijn de [`BiocManager`](<https://bioconductor.org/install/>) packages [`DESeq2`](<https://doi.org/10.3791/62528>) V1.50.2 en [`EnhancedVolcano`](<http://bioconductor.org/packages/EnhancedVolcano/>) V1.28.2 nodig. Een differentiële analyse wordt over de data uitgevoerd. De VolcanoPlot bevat de log₂ fold change en gecorrigeerde P-waarde <0.05.
 
 Bepalen van verschillende Gene Ontologies gaat via [`goseq`](<http://bioconductor.org/packages/goseq/>) V1.62.0, [`org.Hs.eg.db`](<http://bioconductor.org/packages/org.Hs.eg.db/>) en [`AnnotationDbi`](<http://bioconductor.org/packages/AnnotationDbi/>). Hier wordt een gecorrigeerde P-waarde van <0.05 aangehouden en het hg38 genoom wordt gebruikt. De ontologie [osteoclast differentiation](<https://amigo.geneontology.org/amigo/term/GO:0030316>) is onderzocht.
 
@@ -51,20 +52,26 @@ Pathway analyses vereisen clusterProfiler V4.18.4 pathview V1.50.0, KEGGREST V1.
 zie figuur 2.
 
 ## 📊 Resultaten
+
+In de transcriptoomanalyse was de differentiële genexpressie tussen de condities van RA (n=4) en controle (n=4) onderzocht. Een Volcano plot is gemaakt om alle significante genen met differentiële expressie te weergeven. Een GO-analyse is uitgevoerd om significante biologische processen te weergeven. De KEGG pathway analyse toont alle betrokken pathways bij handmatig geselecteerde genen.
+
 ### Volcano Plot
 
-Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te zien (figuur 2). Van de 29407 genen waren 4572 significant aan de hand van een P-waarde <0.05 en een log₂ fold change van > 1 en < -1. De meeste tot expressie gebrachte genen waren gerelateerd aan het immuunsysteem, voornamelijk B-cellen, T-cellen en macrofagen. Er is een willekeurig gen gekozen ongerelateerd aan T-cellen. Het gen PTGFR (prostaglandin F-receptor) suggereert dat prostaglandine-gemedieerde signaaltranductie betrekking heeft bij de inflammatiore processen van RA.  De log₂ fold change van dit gen was 3.59142 en een p-waarde van 5.7e-23 (zie tabel 2).
+Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te zien (figuur 2). Van de 29407 genen waren 4572 significant aan de hand van een P-waarde <0.05 en een log₂ fold change van > 1 en < -1. De meeste tot expressie gebrachte genen waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een willekeurig gen gekozen ongerelateerd aan T-cellen. Het gen [PTGFR](<https://www.kegg.jp/entry/hsa:5737>) (prostaglandin F-receptor) suggereert dat prostaglandine-gemedieerde signaaltranductie betrekking heeft bij de inflammatiore processen van RA. De log₂ fold change van dit gen was 3.59142 en een gecorrigeerde P-waarde van 7.61760e-20 (tabel 2).
 
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
 </p>
 
-*Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA patienten (n=4). Genen n=29407, de p-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
+*Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA-patienten (n=4). Genen n=29407, de P-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
 
 *Tabel 2. Resultaten van de differentiële analyse van het gen PTGFR.*
 |       | baseMean | log2FoldChange |   lfcSE   |  stat   |   pvalue    |     padj    |
 | ----- | -------- | -------------- | --------- | ------- | ----------- | ----------- |
 | PTGFR | 1219.636 |    3.59142     |  0.363946 | 9.86798 | 5.73068e-23 | 7.61760e-20 |
+
+### Gene Ontology Analyse
+[Gene Ontology](<https://amigo.geneontology.org/amigo/term/GO:0030316>)
 
 
 
@@ -80,14 +87,6 @@ Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te 
 </p>
 
 *Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.*
-
-### Gene Ontology Analyse
-
-
-[Gene Ontology](<https://amigo.geneontology.org/amigo/term/GO:0030316>)
-
-
-
 
 ## Conclusie
 
