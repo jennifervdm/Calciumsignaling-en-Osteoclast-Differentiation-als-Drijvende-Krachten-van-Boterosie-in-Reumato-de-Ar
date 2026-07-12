@@ -48,6 +48,8 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 
 *Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en index worden gemapt naar BAM files. De reads van deze files worden vergeleken met de GTF annotatie en geteld. In de data-analyse worden een Volcano plot gemaakt, een GO-analyse, en KEGG Pathway-analyse uitgevoerd.*
 
+zie figuur 2.
+
 ## 📊 Resultaten
 ### Volcano plot
 <p align="center">
