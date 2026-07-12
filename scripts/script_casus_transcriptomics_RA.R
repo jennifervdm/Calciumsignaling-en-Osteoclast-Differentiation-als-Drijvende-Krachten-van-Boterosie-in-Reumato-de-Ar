@@ -131,7 +131,7 @@ write.csv(counts, "human_countmatrix.csv")
 #----
 # Statistiek en analyse
 # Inladen tekstbestand
-setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/github/data processed/")
+setwd("C:/Users/Jenni/OneDrive - NHL Stenden/j2/p4/transcriptomics/casus reuma/github/data_processed/")
 getwd()
 file.exists("count_matrix_RA.txt")
 count_matrix_RA = read.delim("count_matrix_RA.txt")
@@ -358,8 +358,8 @@ as.data.frame(kegg_resultaten_RA)
 head(as.data.frame(kegg_resultaten_RA))
 
 # Visualisatie voor de meest voorkomende significante pathways
-dotplot(kegg_results)
-barplot(kegg_results)
+dotplot(kegg_resultaten_RA)
+barplot(kegg_resultaten_RA)
 
 # Maak de vector nodig voor de analyse
 pathview_vector <- resultaten_RA$log2FoldChange
