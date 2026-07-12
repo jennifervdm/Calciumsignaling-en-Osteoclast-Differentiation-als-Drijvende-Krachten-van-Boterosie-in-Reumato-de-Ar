@@ -63,7 +63,7 @@ Uit de Volcano plot waren 2085 opgereguleerde en 2487 neergereguleerde genen te 
 
 *Tabel 2. Resultaten van de differentiële analyse van het gen PTGFR. *
 |       | baseMean | log2FoldChange |   lfcSE   |  stat   |   pvalue    |     padj    |
-|       | -------- | -------------- | --------- | ------- | ----------- | ----------- |
+| ----- | -------- | -------------- | --------- | ------- | ----------- | ----------- |
 | PTGFR | 1219.636 |    3.59142     |  0.363946 | 9.86798 | 5.73068e-23 | 7.61760e-20 |
 
 
