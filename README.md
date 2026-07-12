@@ -51,7 +51,7 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 ## 📊 Resultaten
 ### Volcano plot
 <p align="center">
-  <img src="resultaten_/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
+  <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
 </p>
 
 *Figuur 2. Volcano plot van genen met differentiële genexpressie bij RA. De data vergelijkt gezonde individuen (n=4) met RA patienten (n=4). Genen n=29407, de p-waarde van <0.05 is meegenomen. De x-range loopt van -14 naar 14, aangezien alle data binnen deze punten ligt. Er is gekozen elke 2 waarden op de x-as aan te geven voor overzicht.*
@@ -59,7 +59,7 @@ Pathway analyses vereisen [`clusterProfiler`](<https://doi.org/10.1089/omi.2011.
 ### KEGG pathway analyse
 
 <p align="center">
-  <img src="resultaten_/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
+  <img src="resultaten/hsa04662.pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
 </p>
 
 *Figuur 3. KEGG pathway van het hsa04662 gen voor calcium signaling.*
