@@ -1,8 +1,8 @@
 # Calciumsignaling en Osteoclast Differentiation als Drijvende Krachten van Boterosie in Reumatoïde Artritis: een transcriptomics analyse
 ## 📁 Inhoud/structuur
-- `assets` - Overige documenten voor de opmaak van deze pagina.
+- `assets` - Documenten voor de opmaak van deze pagina.
 - `bronnen` - Gebruikte bronnen en AI gebruik.
-- `data_processed` – Bewerkte data voor helder overzicht van resultaten en uitvoeren van analyses. 
+- `data_processed` – Bewerkte data voor helder overzicht van metadata en uitvoeren van analyses. 
 - `data_raw` – Ruwe data afkomstig van 8 individuen, waarvan 4 RA hebben, en 4 gezond zijn.  
 - `data_stewardship` - Aantoning van de competentie Beheren niveau I.
 - `scripts` – Scripts waarin de data geanalyseerd wordt.
