@@ -1,9 +1,8 @@
-"";"treatment_RA"
-"1";"Control"
-"2";"Control"
-"3";"Control"
-"4";"Control"
-"5";"Rheumatoid arthritis (established)"
-"6";"Rheumatoid arthritis (established)"
-"7";"Rheumatoid arthritis (established)"
-"8";"Rheumatoid arthritis (established)"
+SRR4785819,31,female,Normal
+SRR4785820,15,female,Normal
+SRR4785828,31,female,Normal
+SRR4785831,42,female,Normal
+SRR4785979,54,female,Rheumatoid_arthritis_(established)
+SRR4785980,55,female,Rheumatoid_arthritis_(established)
+SRR4785986,60,female,Rheumatoid_arthritis_(established)
+SRR4785988,59,female,Rheumatoid_arthritis_(established)
