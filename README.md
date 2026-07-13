@@ -55,7 +55,7 @@ In de transcriptoomanalyse was de differentiële genexpressie tussen de conditie
 
 ### Volcano Plot
 
-De Volcano plot weergaf 2085 opgereguleerde en 2487 neergereguleerde [(figuur 2)](resultaten/Volcanoplot_RA.png). Van de 29407 genen waren 4572 significant, P-waarde <0.05 en een log₂ fold change van > 1 en < -1 waren meegenomen. De meeste genen met expressie waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een gen gekozen in verband met boterosie. Het gen [CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) (Ca2+/calmodulin-dependent protein kinase) is onderzocht wegens betrekking tot osteoclast differentiation. De log₂ fold change van dit gen was opgereguleerd tot 3.31 met een gecorrigeerde P-waarde van 3.47e-05 [(tabel 2)](resultaten/CAMK4_differentiële-analyse).
+De Volcano plot weergaf 2085 opgereguleerde en 2487 neergereguleerde [(figuur 2)](resultaten/Volcanoplot_RA.png). Van de 29407 genen waren 4572 significant, P-waarde <0.05 en een log₂ fold change van > 1 en < -1 waren meegenomen. De meeste genen met expressie waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een gen gekozen in verband met boterosie. Het gen [CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) (Ca2+/calmodulin-dependent protein kinase) is onderzocht wegens betrekking tot osteoclast differentiation. De log₂ fold change van dit gen was opgereguleerd tot 3.31 met een gecorrigeerde P-waarde van 3.47e-05 [(tabel 2)](resultaten/CAMK4_differentiële-analyse.cvs).
 
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
