@@ -21,7 +21,7 @@ In dit onderzoek is ingedoken op de processen betrokken bij RA, door transcripti
 
 ## Methoden
 
-Er is ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](assets/Flowchart_Methode_RA.png). De dataset is afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>) (zie tabel 1), en is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomics_RA.R).
+Er is ingezoomd op de transcriptomics van RA, om genen op te sporen met onderzoekspotentie [(figuur 1)](assets/Flowchart_Methode_RA.png). De dataset is afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>) [(tabel 1)](data_processed/Metadata_RA.cvs), en is uitgewerkt in R V4.5.2 in dit [script](scripts/script_casus_transcriptomics_RA.R).
 
 *Tabel 1. Patiënten uit onderzochte dataset, afkomstig van het onderzoek van [Platzer et al. (2019)](<https://doi.org/10.1371/journal.pone.0219698>). De ruwe sequencing data in FASTQ bestanden is afkomstig van 8 vrouwen, 4 met RA (leeftijden 54-66), vastgesteld voor >12 maanden en positief getest op autoantistoffen ACPA. En een negatief geteste controlegroep van 4 (leeftijden 15-42).*
 |     ID      | Age |   Sex   |               Status                |
