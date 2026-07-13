@@ -49,15 +49,13 @@ KEGG pathway analyses vereisen clusterProfiler [(Yu et al., 2012)](<https://doi.
 
 *Figuur 1. Flowchart van de gebruikte methode. Een referentiegenoom wordt geïndexeerd. RNA seq data en index worden gemapt naar BAM files. De reads van deze files worden vergeleken met de GTF annotatie en geteld. In de data-analyse worden een Volcano plot gemaakt, een GO-analyse, en KEGG Pathway-analyse uitgevoerd.*
 
-zie figuur 2.
-
 ## 📊 Resultaten
 
 In de transcriptoomanalyse was de differentiële genexpressie tussen de condities van RA (n=4) en controle (n=4) onderzocht. Een Volcano plot is gemaakt om alle significante genen met differentiële expressie te weergeven, een GO-analyse voor significante biologische processen, en KEGG pathway analyse voor betrokken pathways bij handmatig geselecteerde genen.
 
 ### Volcano Plot
 
-De Volcano plot weergaf 2085 opgereguleerde en 2487 neergereguleerde (figuur 2). Van de 29407 genen waren 4572 significant, P-waarde <0.05 en een log₂ fold change van > 1 en < -1 waren meegenomen. De meeste genen met expressie waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een gen gekozen in verband met boterosie. Het gen [CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) (Ca2+/calmodulin-dependent protein kinase) is onderzocht wegens betrekking tot osteoclast differentiation. De log₂ fold change van dit gen was opgereguleerd tot 3.31 met een gecorrigeerde P-waarde van 3.47e-05 (tabel 2).
+De Volcano plot weergaf 2085 opgereguleerde en 2487 neergereguleerde [(figuur 2)](resultaten/Volcanoplot_RA.png). Van de 29407 genen waren 4572 significant, P-waarde <0.05 en een log₂ fold change van > 1 en < -1 waren meegenomen. De meeste genen met expressie waren gerelateerd aan B-cellen, T-cellen en macrofagen. Er is een gen gekozen in verband met boterosie. Het gen [CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) (Ca2+/calmodulin-dependent protein kinase) is onderzocht wegens betrekking tot osteoclast differentiation. De log₂ fold change van dit gen was opgereguleerd tot 3.31 met een gecorrigeerde P-waarde van 3.47e-05 (tabel 2).
 
 <p align="center">
   <img src="resultaten/Volcanoplot_RA.png "alt="Resultaten Volcanoplot" width="600"/>
@@ -76,7 +74,7 @@ De Gene Ontology (GO)-analyse weergaf significante processen van RA-patiënten. 
 
 ### KEGG Pathway Analyse
 
-[CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) is geanalyseerd met een KEGG-pathway analyse. Het is betrokken bij calcium signaling, cAMP signaling en osteoclast differentiation. Veel betrokken genen bij calcium signalering pathway zijn niet significant binnen de Volcano plot, RYR en de CAMK familie wel. Binnen de pathway had CAMK een onderrepresentatie.
+[CAMK4](<https://www.kegg.jp/entry/hsa:CAMK4>) is geanalyseerd met een KEGG-pathway analyse. Het is betrokken bij calcium signaling, cAMP signaling en osteoclast differentiation. Aan de hand hiervan is een calcium signaling pathway analyse uitgevoerd [(figuur 3)](resultaten/hsa04020_pathview_RA.png). Veel betrokken genen bij de pathway waren niet significant binnen de Volcano plot, RYR en de CAMK familie wel. Binnen de pathway had CAMK een onderrepresentatie.
 
 <p align="center">
   <img src="resultaten/hsa04020_pathview_RA.png" alt="Resultaten Pathway Analyse" width="600"/>
@@ -104,7 +102,7 @@ Chetina, E. V., & Markova, G. A. (2019). Prospects for the Use of Gene Expressio
 
 EnhancedVolcano. (z.d.). Bioconductor. Geraadpleegd 29 mei 2026, van <http://bioconductor.org/packages/EnhancedVolcano/>
 
-Filgueira, L. (2010). Chapter 5—Osteoclast Differentiation and Function. In D. Heymann (Red.), Bone Cancer (pp. 59-66). Academic Press. <https://doi.org/10.1016/B978-0-12-374895-9.00005-0>***
+Filgueira, L. (2010). Chapter 5—Osteoclast Differentiation and Function. In D. Heymann (Red.), Bone Cancer (pp. 59-66). Academic Press. <https://doi.org/10.1016/B978-0-12-374895-9.00005-0>
 
 Freeley, M. (2025). CAR T Cell Therapy for Rheumatoid Arthritis. Clinical Reviews in Allergy & Immunology, 68(1), 100. <https://doi.org/10.1007/s12016-025-09113-7>
 
